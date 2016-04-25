@@ -2,7 +2,7 @@
  * Project: CharterBus
  * File: Main styles
  */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 /* ==========================================================================
    _GENERAL STYLES
    ========================================================================== */
@@ -16,7 +16,7 @@ html {
   padding: 0;
   margin: 0;
   font: 16px/22px 'Open Sans', Arial, sans-serif;
-  color: #353535;
+  color: #444;
   background: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,7 +45,7 @@ p {
   outline: -webkit-focus-ring-color auto 0;
 }
 a {
-  color: #f22c2c;
+  color: #86564a;
   outline: none;
   text-decoration: underline;
   transition: color 0.2s ease;
@@ -192,7 +192,7 @@ figure img {
 .wrapper {
   width: 100%;
   max-width: 768px;
-  padding: 0 15px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 .wrapper:after {
@@ -224,7 +224,7 @@ textarea {
   height: 40px;
   padding: 8px 15px;
   font: 16px/24px 'Open Sans', Arial, sans-serif;
-  color: #353535;
+  color: #444;
   background: #fff;
   border-radius: 6px;
   border: 1px solid #000;
@@ -262,14 +262,38 @@ textarea {
 button,
 input[type="submit"] {
   height: auto;
-  padding: 12px 34px;
-  font: 16px/16px 'Open Sans', Arial, sans-serif;
+  padding: 18px 24px;
+  font: 600 16px/18px 'Open Sans', Arial, sans-serif;
   display: inline-block;
   color: #fff;
   text-align: center;
   text-decoration: none;
-  border-radius: 8px;
+  text-transform: uppercase;
+  background: transparent;
   border: none;
+  position: relative;
+  z-index: 1;
+}
+.button:before,
+button:before,
+input[type="submit"]:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  background: #f01f2b;
+  border-bottom: 4px solid #bb0e1a;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: skew(-22deg, 0);
+  -webkit-transform: skew(-22deg, 0);
+  -moz-transform: skew(-22deg, 0);
+  -o-transform: skew(-22deg, 0);
+  -ms-transform: skew(-22deg, 0);
+  transition: background-color 0.2s ease;
+  z-index: -1;
 }
 .button:hover:before,
 button:hover:before,
@@ -277,7 +301,29 @@ input[type="submit"]:hover:before,
 .button:focus:before,
 button:focus:before,
 input[type="submit"]:focus:before {
-  opacity: 1;
+  background-color: #bb0e1a;
+}
+.button.button-white:before,
+button.button-white:before,
+input[type="submit"].button-white:before {
+  background: transparent;
+  border: 1px solid #fff;
+}
+.button.button-white:hover,
+button.button-white:hover,
+input[type="submit"].button-white:hover,
+.button.button-white:focus,
+button.button-white:focus,
+input[type="submit"].button-white:focus {
+  color: #444;
+}
+.button.button-white:hover:before,
+button.button-white:hover:before,
+input[type="submit"].button-white:hover:before,
+.button.button-white:focus:before,
+button.button-white:focus:before,
+input[type="submit"].button-white:focus:before {
+  background-color: #fff;
 }
 /* FORM LINE */
 .form-line {
@@ -291,3 +337,142 @@ input[type="submit"]:focus:before {
 /* ==========================================================================
    _HEADER
    ========================================================================== */
+.header {
+  padding: 37px 0 60px;
+  background-color: #eda73e;
+  background: -webkit-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -moz-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -ms-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -o-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: linear-gradient(to right, #eda73e, #f3c14d, #f0ad47);
+  box-shadow: inset 0 7px 0 0 rgba(135, 87, 74, 0.87);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+.header:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 34px;
+  background: #86564a;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.header .toggle {
+  width: 40px;
+  height: 20px;
+  margin-right: -122px;
+  display: block;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  cursor: pointer;
+  position: absolute;
+  right: 50%;
+  bottom: 7px;
+}
+.header .toggle:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4px;
+}
+.header .logo {
+  width: 249px;
+  height: 43px;
+  margin: 0 auto 6px;
+}
+.header .logo img,
+.header .logo a {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.header .slogan {
+  margin-bottom: 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.header .city {
+  margin-bottom: 13px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.header .city .h {
+  display: inline-block;
+  vertical-align: middle;
+}
+.header .city ul {
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+.header .city ul li {
+  display: none;
+}
+.header .city ul li.active {
+  display: block;
+}
+.header .city ul li.active a {
+  padding-right: 13px;
+  text-decoration: none;
+  border-bottom: 1px dashed #86564a;
+  display: block;
+  position: relative;
+}
+.header .city ul li.active a:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #86564a transparent transparent transparent;
+  position: absolute;
+  right: 0;
+  top: 11px;
+}
+.header .button-order {
+  margin-bottom: 21px;
+}
+.header .tel {
+  font-size: 30px;
+  line-height: normal;
+  display: block;
+  color: #fff;
+  cursor: default;
+  text-decoration: none;
+  font-weight: normal;
+}
+.header .tel .brown {
+  color: #86564a;
+}
+.header .clock {
+  margin-bottom: 18px;
+  font-size: 17px;
+  font-weight: normal;
+}
+.header .button-callback {
+  padding: 16px 14px 16px 42px;
+}
+.header .button-callback .fa {
+  font-size: 32px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.header .nav {
+  display: none;
+}

@@ -12,6 +12,11 @@ $(document).ready(function () {
 	/*** Forms ***/
 	initForms();
 
+	/*** Header ***/
+	$('.header').each(function () {
+		$(this).append('<span class="toggle"></span>');
+	});
+
 });
 
 /**
