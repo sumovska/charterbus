@@ -15,7 +15,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font: 16px/22px 'Open Sans', Arial, sans-serif;
+  font: 300 16px/22px 'Open Sans', Arial, sans-serif;
   color: #444;
   background: #fff;
   -webkit-font-smoothing: antialiased;
@@ -144,26 +144,32 @@ h6 {
   .h1,
   h1 {
     font-size: 56px;
+    margin: 27px 0 27px;
   }
   .h2,
   h2 {
     font-size: 49px;
+    margin: 27px 0 27px;
   }
   .h3,
   h3 {
     font-size: 40px;
+    margin: 27px 0 27px;
   }
   .h4,
   h4 {
     font-size: 35px;
+    margin: 27px 0 27px;
   }
   .h5,
   h5 {
     font-size: 30px;
+    margin: 27px 0 27px;
   }
   .h6,
   h6 {
     font-size: 27px;
+    margin: 27px 0 27px;
   }
 }
 /* ==========================================================================
@@ -680,4 +686,109 @@ input[type="submit"].button-white:focus:before {
   .header .nav ul li.active a {
     color: #f3c14d;
   }
+}
+/* ==========================================================================
+   _INFORMATION
+   ========================================================================== */
+.information {
+  padding: 10px 0 40px;
+  text-align: center;
+  background: #ececec;
+}
+.information .contacts {
+  margin-bottom: 5px;
+}
+.information .contacts .heading {
+  margin-bottom: 18px;
+}
+.information .contacts .line {
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+.information .contacts .line .fa {
+  margin: 0 2px 0 0;
+  font-size: 26px;
+  color: #d7d7d7;
+}
+.information .contacts .line .mail {
+  color: #444;
+  text-decoration: none;
+}
+.information .contacts .line .tel {
+  color: #444;
+  text-decoration: none;
+  cursor: default;
+}
+.information .contacts .line .tel:hover,
+.information .contacts .line .tel:focus {
+  text-decoration: none;
+}
+.information .contacts .company-logo {
+  width: 249px;
+  height: 43px;
+  margin: 45px auto 7px;
+}
+.information .contacts .company-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.information .contacts .slogan {
+  margin: 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.information .links {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.information .links .heading {
+  margin-bottom: 18px;
+}
+.information .links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  font-size: 14px;
+  line-height: normal;
+}
+.information .links ul li {
+  margin-bottom: 2px;
+  padding-left: 26px;
+  color: #444;
+  position: relative;
+}
+.information .links ul li:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 6px;
+  height: 6px;
+  background: #f01f2b;
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+.information .links ul li a {
+  color: #444;
+  text-decoration: none;
+}
+.information .links ul li a:hover {
+  text-decoration: underline;
+}
+.information .payment ul {
+  margin: 0 0 34px;
+  padding: 0;
+  list-style: none;
+}
+.information .payment ul li {
+  margin: 0 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.information .payment ul li img {
+  width: auto;
+  height: 64px;
 }
