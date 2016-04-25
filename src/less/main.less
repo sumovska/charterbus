@@ -252,6 +252,9 @@ figure {
     padding-right: 15px;
   }
 }
+.main {
+  padding: 13px 0;
+}
 /* PureCSS styles */
 .pure-g {
   font-family: inherit;
@@ -673,9 +676,23 @@ textarea {
    _INFORMATION
    ========================================================================== */
 .information {
+  margin-top: 48px;
   padding: 10px 0 40px;
   text-align: center;
   .gradient-x3(@color-white-smoke-shade1, @color-white-smoke, @color-white-smoke-shade2);
+  &:after {
+    .before;
+    clear: both;
+    height: 20px;
+    background: url("@{images}/shadow.jpg") 50% 0 no-repeat;
+    background-size: auto 100%;
+    opacity: .98;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    z-index: -1;
+  }
   .contacts {
     margin-bottom: 5px;
     .heading {
@@ -773,6 +790,7 @@ textarea {
   @media @md {
     padding-top: 24px;
     text-align: left;
+    &:after { height: 26px; }
     .wrapper {
       padding-left: 32px;
       padding-right: 32px;
@@ -837,6 +855,7 @@ textarea {
       top: 0;
       z-index: -1;
     }
+    &:after { height: 30px; }
     .wrapper {
       padding-left: 15px;
       padding-right: 15px;
@@ -879,6 +898,49 @@ textarea {
         position: relative;
         top: auto;
         right: auto;
+      }
+    }
+  }
+}
+/* ==========================================================================
+   _TESTIMONIALS
+   ========================================================================== */
+.testimonials {
+  text-align: center;
+  .list {
+    .entry {
+      margin-bottom: 55px;
+      &:last-of-type { margin-bottom: 40px;}
+      .name {
+        margin: 0 0 13px;
+        color: @color-brown;
+        font-weight: bold;
+        font-size: 18px;
+        .time {
+          font-weight: normal;
+          color: @color-font;
+        }
+      }
+      .comment {
+        padding: 16px 16px 20px;
+        line-height: 24px;
+        background: @color-white-smoke-shade1;
+        position: relative;
+        text-align: left;
+        &:before {
+          .before;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 40px 34px 0;
+          border-color: transparent @color-white-smoke-shade1 transparent transparent;
+          position: absolute;
+          top: 100%;
+          right: 41px;
+        }
+        p {
+          &:last-of-type { margin-bottom: 0;}
+        }
       }
     }
   }
