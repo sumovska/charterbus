@@ -987,3 +987,21 @@ input[type="submit"].button-white:focus:before {
 .testimonials .list .entry .comment p:last-of-type {
   margin-bottom: 0;
 }
+@media (min-width: 768px) {
+  .testimonials .list {
+    margin-top: 36px;
+    text-align: left;
+  }
+  .testimonials .list .entry {
+    margin-bottom: 58px;
+  }
+  .testimonials .list .entry .name {
+    margin-bottom: 22px;
+  }
+  .testimonials .list .entry .comment {
+    padding: 24px;
+  }
+  .testimonials .list .entry .comment:before {
+    right: 80px;
+  }
+}
