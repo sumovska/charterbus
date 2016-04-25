@@ -9,7 +9,7 @@
 @min-width: 320px;
 @md-width: 768px;
 @lg-width: 1024px;
-@xl-width: 1170px;
+@xl-width: 1200px;
 
 @xs: ~"(min-width: 400px)";
 @sm: ~"(min-width: 568px)";
@@ -242,6 +242,11 @@ figure {
   padding: 0 10px;
   margin: 0 auto;
   &:after { .clearfix; }
+  @media @xl {
+    max-width: @xl-width;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 /* PureCSS styles */
 .pure-g {
@@ -338,6 +343,13 @@ textarea {
   margin-bottom: 22px;
   &:after { .clearfix; }
 }
+@media @xl {
+  .button, button, input[type="submit"] {
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 /* ==========================================================================
    _HEADER
    ========================================================================== */
@@ -359,6 +371,19 @@ textarea {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: -1;
+  }
+  &:after {
+    .before;
+    clear: both;
+    height: 20px;
+    background: url("@{images}/shadow.jpg") 50% 0 no-repeat;
+    background-size: auto 100%;
+    opacity: .98;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
     z-index: -1;
   }
   .toggle {
@@ -393,24 +418,25 @@ textarea {
     }
   }
   .slogan {
-    margin-bottom: 0;
+    margin-bottom: 15px;
     font-size: 13px;
     text-transform: uppercase;
     font-weight: normal;
   }
   .city {
-    margin-bottom: 13px;
+    margin-bottom: 26px;
     font-size: 14px;
     font-weight: 600;
     .h {
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: top;
     }
     ul {
+      margin: 0;
       padding: 0;
       list-style: none;
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: top;
       li {
         display: none;
         &.active {
@@ -473,6 +499,7 @@ textarea {
     height: 258px;
     padding-top: 46px;
     text-align: left;
+    &:after { height: 26px; }
     .toggle {
       margin-right: -319px;
     }
@@ -511,7 +538,7 @@ textarea {
       margin: 0;
       position: absolute;
       left: 307px;
-      top: 10px;
+      top: 24px;
     }
     .clock {
       margin: 0;
@@ -522,6 +549,118 @@ textarea {
       .up {
         display: block;
         text-transform: uppercase;
+      }
+    }
+  }
+  @media @xl {
+    height: 248px;
+    &:before {
+      right: 80%;
+      top: 165px;
+      bottom: auto;
+    }
+    &:after {
+      height: 30px;
+    }
+    .toggle { display: none; }
+    .logo {
+      left: 58px;
+    }
+    .slogan {
+      top: 47px;
+      left: 58px;
+    }
+    .city {
+      left: 391px;
+      top: 20px;
+      ul {
+        li {
+          &.active {
+            a {
+              &:before {
+                top: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .tel {
+      font-size: 32px;
+      top: -8px;
+      right: 268px;
+      left: auto;
+    }
+    .clock {
+      font-size: 18px;
+      top: 33px;
+      right: 271px;
+      left: auto;
+      .up {
+        text-transform: none;
+        display: inline;
+      }
+    }
+    .button-callback {
+      padding-right: 20px;
+      padding-left: 48px;
+      right: -18px;
+      top: 3px;
+      .fa {
+        left: 14px;
+      }
+    }
+    .button-order {
+      top: 99px;
+      right: 18px;
+    }
+    .nav {
+      padding-right: 12px;
+      display: block;
+      font-size: 17px;
+      font-weight: normal;
+      position: absolute;
+      top: 119px;
+      left: 27px;
+      z-index: 1;
+      &:before {
+        .before;
+        height: 34px;
+        background: @color-brown;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        .skew(-22deg, 0);
+        transition: background-color @duration;
+        z-index: -1;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        z-index: 1;
+        li {
+          margin: 0 21px;
+          display: inline-block;
+          text-transform: uppercase;
+          a {
+            padding: 4px 10px;
+            display: block;
+            color: @color-white;
+            text-decoration: none;
+            &:hover {
+              color: @color-mustard;
+            }
+          }
+          &.active {
+            a {
+              color: @color-mustard;
+            }
+          }
+        }
       }
     }
   }
