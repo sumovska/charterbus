@@ -188,6 +188,9 @@ h6 {
 .hidden {
   display: none;
 }
+.text-center {
+  text-align: center;
+}
 figure {
   margin: 0;
 }
@@ -215,6 +218,11 @@ figure img {
 }
 .main {
   padding: 13px 0;
+}
+@media (min-width: 1280px) {
+  .main {
+    padding: 32px 0;
+  }
 }
 /* PureCSS styles */
 .pure-g {
@@ -536,13 +544,13 @@ input[type="submit"].button-white:focus:before {
   .header .logo {
     margin: 0;
     position: absolute;
-    left: 14px;
+    left: 15px;
     top: 0;
   }
   .header .slogan {
     position: absolute;
     top: 49px;
-    left: 13px;
+    left: 15px;
   }
   .header .button-order {
     margin: 0;
@@ -593,15 +601,11 @@ input[type="submit"].button-white:focus:before {
   .header .toggle {
     display: none;
   }
-  .header .logo {
-    left: 58px;
-  }
   .header .slogan {
     top: 47px;
-    left: 58px;
   }
   .header .city {
-    left: 391px;
+    left: 348px;
     top: 20px;
   }
   .header .city ul li.active a:before {
@@ -610,13 +614,13 @@ input[type="submit"].button-white:focus:before {
   .header .tel {
     font-size: 32px;
     top: -8px;
-    right: 268px;
+    right: 310px;
     left: auto;
   }
   .header .clock {
     font-size: 18px;
     top: 33px;
-    right: 271px;
+    right: 314px;
     left: auto;
   }
   .header .clock .up {
@@ -626,7 +630,7 @@ input[type="submit"].button-white:focus:before {
   .header .button-callback {
     padding-right: 20px;
     padding-left: 48px;
-    right: -18px;
+    right: 25px;
     top: 3px;
   }
   .header .button-callback .fa {
@@ -634,16 +638,16 @@ input[type="submit"].button-white:focus:before {
   }
   .header .button-order {
     top: 99px;
-    right: 18px;
+    right: 62px;
   }
   .header .nav {
-    padding-right: 12px;
+    padding-right: 34px;
     display: block;
     font-size: 17px;
     font-weight: normal;
     position: absolute;
     top: 119px;
-    left: 27px;
+    left: 5px;
     z-index: 1;
   }
   .header .nav:before {
@@ -666,7 +670,7 @@ input[type="submit"].button-white:focus:before {
     z-index: -1;
   }
   .header .nav ul {
-    margin: 0;
+    margin: 0 -21px;
     padding: 0;
     list-style: none;
     position: relative;
@@ -718,6 +722,12 @@ input[type="submit"].button-white:focus:before {
   right: 0;
   bottom: 100%;
   z-index: -1;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -webkit-backface-visibility: hidden;
 }
 .information .contacts {
   margin-bottom: 5px;
@@ -871,7 +881,6 @@ input[type="submit"].button-white:focus:before {
 @media (min-width: 1280px) {
   .information {
     padding-top: 38px;
-    overflow: hidden;
     position: relative;
     z-index: 1;
   }
@@ -996,12 +1005,32 @@ input[type="submit"].button-white:focus:before {
     margin-bottom: 58px;
   }
   .testimonials .list .entry .name {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
   .testimonials .list .entry .comment {
     padding: 24px;
   }
   .testimonials .list .entry .comment:before {
     right: 80px;
+  }
+}
+@media (min-width: 1280px) {
+  .testimonials {
+    text-align: left;
+  }
+  .testimonials .list {
+    margin-top: 40px;
+  }
+  .testimonials .list .entry {
+    margin-bottom: 66px;
+  }
+  .testimonials .list .entry:last-of-type {
+    margin-bottom: 54px;
+  }
+  .testimonials .list .entry .comment {
+    padding: 28px 36px 34px;
+  }
+  .testimonials .list .entry .comment:before {
+    right: 180px;
   }
 }

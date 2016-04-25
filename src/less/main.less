@@ -235,6 +235,7 @@ h6 {&:extend(.h6); }
 .clearfix { display: table; content: '\0020'; clear: both; }
 .before { display: block; content: '\0020'; overflow: hidden; }
 .hidden { display: none; }
+.text-center { text-align: center; }
 figure {
   margin: 0;
   img { max-width: 100%; }
@@ -254,6 +255,9 @@ figure {
 }
 .main {
   padding: 13px 0;
+  @media @xl {
+    padding: 32px 0;
+  }
 }
 /* PureCSS styles */
 .pure-g {
@@ -517,13 +521,13 @@ textarea {
     .logo {
       margin: 0;
       position: absolute;
-      left: 14px;
+      left: 15px;
       top: 0;
     }
     .slogan {
       position: absolute;
       top: 49px;
-      left: 13px;
+      left: 15px;
     }
     .button-order {
       margin: 0;
@@ -570,15 +574,11 @@ textarea {
       height: 30px;
     }
     .toggle { display: none; }
-    .logo {
-      left: 58px;
-    }
     .slogan {
       top: 47px;
-      left: 58px;
     }
     .city {
-      left: 391px;
+      left: 348px;
       top: 20px;
       ul {
         li {
@@ -595,13 +595,13 @@ textarea {
     .tel {
       font-size: 32px;
       top: -8px;
-      right: 268px;
+      right: 310px;
       left: auto;
     }
     .clock {
       font-size: 18px;
       top: 33px;
-      right: 271px;
+      right: 314px;
       left: auto;
       .up {
         text-transform: none;
@@ -611,7 +611,7 @@ textarea {
     .button-callback {
       padding-right: 20px;
       padding-left: 48px;
-      right: -18px;
+      right: 25px;
       top: 3px;
       .fa {
         left: 14px;
@@ -619,16 +619,16 @@ textarea {
     }
     .button-order {
       top: 99px;
-      right: 18px;
+      right: 62px;
     }
     .nav {
-      padding-right: 12px;
+      padding-right: 34px;
       display: block;
       font-size: 17px;
       font-weight: normal;
       position: absolute;
       top: 119px;
-      left: 27px;
+      left: 5px;
       z-index: 1;
       &:before {
         .before;
@@ -644,7 +644,7 @@ textarea {
         z-index: -1;
       }
       ul {
-        margin: 0;
+        margin: 0 -21px;
         padding: 0;
         list-style: none;
         position: relative;
@@ -692,6 +692,7 @@ textarea {
     right: 0;
     bottom: 100%;
     z-index: -1;
+    .rotate(-180deg);
   }
   .contacts {
     margin-bottom: 5px;
@@ -841,7 +842,6 @@ textarea {
   }
   @media @xl {
     padding-top: 38px;
-    overflow: hidden;
     position: relative;
     z-index: 1;
     &:before {
@@ -951,11 +951,25 @@ textarea {
       .entry {
         margin-bottom: 58px;
         .name {
-          margin-bottom: 22px;
+          margin-bottom: 20px;
         }
         .comment {
           padding: 24px;
           &:before { right: 80px; }
+        }
+      }
+    }
+  }
+  @media @xl {
+    text-align: left;
+    .list {
+      margin-top: 40px;
+      .entry {
+        margin-bottom: 66px;
+        &:last-of-type { margin-bottom: 54px; }
+        .comment {
+          padding: 28px 36px 34px;
+          &:before { right: 180px;}
         }
       }
     }
