@@ -476,3 +476,61 @@ input[type="submit"].button-white:focus:before {
 .header .nav {
   display: none;
 }
+@media (min-width: 768px) {
+  .header {
+    height: 258px;
+    padding-top: 46px;
+    text-align: left;
+  }
+  .header .toggle {
+    margin-right: -319px;
+  }
+  .header .wrapper {
+    height: 100%;
+    position: relative;
+  }
+  .header .logo {
+    margin: 0;
+    position: absolute;
+    left: 14px;
+    top: 0;
+  }
+  .header .slogan {
+    position: absolute;
+    top: 49px;
+    left: 13px;
+  }
+  .header .button-order {
+    margin: 0;
+    position: absolute;
+    top: 9px;
+    right: 24px;
+  }
+  .header .button-callback {
+    position: absolute;
+    right: 55px;
+    top: 101px;
+  }
+  .header .tel {
+    position: absolute;
+    top: 104px;
+    left: 12px;
+  }
+  .header .city {
+    margin: 0;
+    position: absolute;
+    left: 307px;
+    top: 10px;
+  }
+  .header .clock {
+    margin: 0;
+    font-size: 16px;
+    position: absolute;
+    top: 102px;
+    left: 310px;
+  }
+  .header .clock .up {
+    display: block;
+    text-transform: uppercase;
+  }
+}
