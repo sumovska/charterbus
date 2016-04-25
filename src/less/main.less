@@ -730,7 +730,7 @@ textarea {
       line-height: normal;
       li {
         margin-bottom: 2px;
-        padding-left: 26px;
+        padding-left: 18px;
         color: @color-font;
         position: relative;
         &:before {
@@ -739,7 +739,7 @@ textarea {
           height: 6px;
           background: @color-red;
           position: absolute;
-          left: 10px;
+          left: 2px;
           top: 7px;
         }
         a {
@@ -765,6 +765,57 @@ textarea {
           width: auto;
           height: 64px;
         }
+      }
+    }
+  }
+  @media @md {
+    padding-top: 24px;
+    text-align: left;
+    .wrapper {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .contacts {
+      width: 63%;
+      margin-bottom: 42px;
+      float: left;
+      .heading {
+        margin-bottom: 21px;
+      }
+      .line {
+        .fa {
+          width: 24px;
+          font-size: 24px;
+        }
+      }
+      .company-logo {
+        margin: 62px 0 7px;
+      }
+    }
+    .payment {
+      width: 100%;
+      padding-right: 300px;
+      clear: both;
+      position: relative;
+      .heading {
+        margin-bottom: 25px;
+      }
+      ul {
+        li {
+          margin: 0 10px 0 0;
+        }
+      }
+      .button {
+        position: absolute;
+        top: 58px;
+        right: 42px;
+      }
+    }
+    .links {
+      width: 37%;
+      float: right;
+      .heading {
+        margin-bottom: 6px;
       }
     }
   }

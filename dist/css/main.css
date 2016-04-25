@@ -756,7 +756,7 @@ input[type="submit"].button-white:focus:before {
 }
 .information .links ul li {
   margin-bottom: 2px;
-  padding-left: 26px;
+  padding-left: 18px;
   color: #444;
   position: relative;
 }
@@ -768,7 +768,7 @@ input[type="submit"].button-white:focus:before {
   height: 6px;
   background: #f01f2b;
   position: absolute;
-  left: 10px;
+  left: 2px;
   top: 7px;
 }
 .information .links ul li a {
@@ -791,4 +791,53 @@ input[type="submit"].button-white:focus:before {
 .information .payment ul li img {
   width: auto;
   height: 64px;
+}
+@media (min-width: 768px) {
+  .information {
+    padding-top: 24px;
+    text-align: left;
+  }
+  .information .wrapper {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .information .contacts {
+    width: 63%;
+    margin-bottom: 42px;
+    float: left;
+  }
+  .information .contacts .heading {
+    margin-bottom: 21px;
+  }
+  .information .contacts .line .fa {
+    width: 24px;
+    font-size: 24px;
+  }
+  .information .contacts .company-logo {
+    margin: 62px 0 7px;
+  }
+  .information .payment {
+    width: 100%;
+    padding-right: 300px;
+    clear: both;
+    position: relative;
+  }
+  .information .payment .heading {
+    margin-bottom: 25px;
+  }
+  .information .payment ul li {
+    margin: 0 10px 0 0;
+  }
+  .information .payment .button {
+    position: absolute;
+    top: 58px;
+    right: 42px;
+  }
+  .information .links {
+    width: 37%;
+    float: right;
+  }
+  .information .links .heading {
+    margin-bottom: 6px;
+  }
 }
