@@ -245,24 +245,21 @@ fieldset {
 /* INPUT & TEXTAREA */
 input,
 textarea {
-  height: 40px;
-  padding: 8px 15px;
-  font: 16px/24px 'Open Sans', Arial, sans-serif;
+  height: 38px;
+  padding: 7px 16px;
+  font: 300 16px/24px 'Open Sans', Arial, sans-serif;
   color: #444;
   background: #fff;
-  border-radius: 6px;
-  border: 1px solid #000;
+  border-radius: 0;
+  border: 1px solid #444;
   transition: background-color 0.2s ease, border-color 0.2s ease;
   -webkit-appearance: none;
-}
-input:focus {
-  border-color: #000;
 }
 .form-line input {
   width: 100%;
 }
 textarea {
-  height: 116px;
+  height: 100px;
   display: block;
   resize: none;
 }
@@ -270,23 +267,23 @@ textarea {
   width: 100%;
 }
 ::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(68, 68, 68, 0.9);
 }
 :-moz-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(68, 68, 68, 0.9);
 }
 ::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(68, 68, 68, 0.9);
 }
 :-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(68, 68, 68, 0.9);
 }
 /* BUTTONS */
 .button,
 button,
 input[type="submit"] {
   height: auto;
-  padding: 18px 24px;
+  padding: 14px 24px;
   font: 600 16px/18px 'Open Sans', Arial, sans-serif;
   display: inline-block;
   color: #fff;
@@ -351,7 +348,7 @@ input[type="submit"].button-white:focus:before {
 }
 /* FORM LINE */
 .form-line {
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 .form-line:after {
   display: table;
@@ -495,6 +492,8 @@ input[type="submit"].button-white:focus:before {
 }
 .header .button-order {
   margin-bottom: 21px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 .header .tel {
   font-size: 30px;
@@ -1139,5 +1138,80 @@ input[type="submit"].button-white:focus:before {
   }
   .services .list .entry .image {
     margin: -30px -30px 24px;
+  }
+}
+/* ==========================================================================
+   _CONTACT-US
+   ========================================================================== */
+.contact-us {
+  text-align: center;
+}
+.contact-us .space {
+  padding: 32px 0;
+  background-color: #ebebeb;
+  background: -webkit-linear-gradient(left, #ebebeb, #f5f5f5, #eaeaea);
+  background: -moz-linear-gradient(left, #ebebeb, #f5f5f5, #eaeaea);
+  background: -ms-linear-gradient(left, #ebebeb, #f5f5f5, #eaeaea);
+  background: -o-linear-gradient(left, #ebebeb, #f5f5f5, #eaeaea);
+  background: linear-gradient(to right, #ebebeb, #f5f5f5, #eaeaea);
+}
+.contact-us .list {
+  margin: 0 0 40px;
+}
+.contact-us .list dt {
+  display: inline;
+}
+.contact-us .list dt:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 32px;
+}
+.contact-us .list dt:first-of-type:before {
+  height: 0;
+}
+.contact-us .list dt .fa {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 13px;
+  padding: 9px 0;
+  display: block;
+  background: #86564a;
+  border-radius: 50%;
+  color: #f3c14d;
+  font-size: 26px;
+  text-align: center;
+}
+.contact-us .list dt .fa.fa-envelope {
+  font-size: 22px;
+}
+.contact-us .list dd {
+  margin-left: 0;
+  display: inline;
+  font-weight: bold;
+}
+.contact-us .list .tel,
+.contact-us .list .mail {
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.contact-us .list .tel {
+  cursor: default;
+}
+.contact-us .form-ask {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.contact-us .form-ask input,
+.contact-us .form-ask textarea {
+  border: none;
+}
+.contact-us .form-ask .form-submit {
+  margin-top: 26px;
+}
+@media (min-width: 375px) {
+  .contact-us .list {
+    padding: 0 20px;
   }
 }
