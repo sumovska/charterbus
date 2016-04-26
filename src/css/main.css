@@ -140,7 +140,7 @@ h6 {
     font-size: 25px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .h1,
   h1 {
     font-size: 56px;
@@ -308,11 +308,11 @@ input[type="submit"]:before {
   right: 0;
   top: 0;
   bottom: 0;
-  transform: skew(-22deg, 0);
-  -webkit-transform: skew(-22deg, 0);
-  -moz-transform: skew(-22deg, 0);
-  -o-transform: skew(-22deg, 0);
-  -ms-transform: skew(-22deg, 0);
+  transform: skew(-22deg, 0deg);
+  -webkit-transform: skew(-22deg, 0deg);
+  -moz-transform: skew(-22deg, 0deg);
+  -o-transform: skew(-22deg, 0deg);
+  -ms-transform: skew(-22deg, 0deg);
   transition: background-color 0.2s ease;
   z-index: -1;
 }
@@ -355,18 +355,25 @@ input[type="submit"].button-white:focus:before {
   content: '\0020';
   clear: both;
 }
+.form-line.form-line-2-col:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.form-line.form-line-2-col .col {
+  margin-bottom: 12px;
+}
+.form-line.form-line-2-col .col:last-of-type {
+  margin-bottom: 0;
+}
 @media (min-width: 768px) {
   .form-line.form-line-2-col {
     margin-left: -4px;
     margin-right: -4px;
   }
-  .form-line.form-line-2-col:after {
-    display: table;
-    content: '\0020';
-    clear: both;
-  }
   .form-line.form-line-2-col .col {
     width: 50%;
+    margin-bottom: 0;
     padding: 0 4px;
     float: left;
   }
@@ -378,6 +385,95 @@ input[type="submit"].button-white:focus:before {
     font-size: 18px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+}
+/* ==========================================================================
+   _FORM-SKEW
+   ========================================================================== */
+.form-skew {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .form-skew .form-area {
+    transform: skew(-22deg, 0deg);
+    -webkit-transform: skew(-22deg, 0deg);
+    -moz-transform: skew(-22deg, 0deg);
+    -o-transform: skew(-22deg, 0deg);
+    -ms-transform: skew(-22deg, 0deg);
+    position: relative;
+    right: 24px;
+  }
+  .form-skew .form-area > * {
+    transform: skew(22deg, 0deg);
+    -webkit-transform: skew(22deg, 0deg);
+    -moz-transform: skew(22deg, 0deg);
+    -o-transform: skew(22deg, 0deg);
+    -ms-transform: skew(22deg, 0deg);
+  }
+  .form-skew input,
+  .form-skew textarea {
+    background: transparent;
+  }
+  .form-skew textarea {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .form-skew .form-line {
+    position: relative;
+    z-index: 1;
+  }
+  .form-skew .form-line:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: skew(-22deg, 0deg);
+    -webkit-transform: skew(-22deg, 0deg);
+    -moz-transform: skew(-22deg, 0deg);
+    -o-transform: skew(-22deg, 0deg);
+    -ms-transform: skew(-22deg, 0deg);
+    transition: background-color 0.2s ease;
+    z-index: -1;
+  }
+  .form-skew .form-line.form-line-2-col:before {
+    display: none;
+  }
+  .form-skew .form-line.form-line-2-col .col {
+    position: relative;
+  }
+  .form-skew .form-line.form-line-2-col .col:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    transform: skew(-22deg, 0deg);
+    -webkit-transform: skew(-22deg, 0deg);
+    -moz-transform: skew(-22deg, 0deg);
+    -o-transform: skew(-22deg, 0deg);
+    -ms-transform: skew(-22deg, 0deg);
+    transition: background-color 0.2s ease;
+    z-index: -1;
+  }
+}
+@media (min-width: 1280px) {
+  .form-skew {
+    max-width: 500px;
+    margin: 0;
+  }
+  .form-skew .form-area {
+    right: 10px;
   }
 }
 /* ==========================================================================
@@ -676,11 +772,11 @@ input[type="submit"].button-white:focus:before {
     right: 0;
     top: 0;
     bottom: 0;
-    transform: skew(-22deg, 0);
-    -webkit-transform: skew(-22deg, 0);
-    -moz-transform: skew(-22deg, 0);
-    -o-transform: skew(-22deg, 0);
-    -ms-transform: skew(-22deg, 0);
+    transform: skew(-22deg, 0deg);
+    -webkit-transform: skew(-22deg, 0deg);
+    -moz-transform: skew(-22deg, 0deg);
+    -o-transform: skew(-22deg, 0deg);
+    -ms-transform: skew(-22deg, 0deg);
     transition: background-color 0.2s ease;
     z-index: -1;
   }
@@ -1231,6 +1327,12 @@ input[type="submit"].button-white:focus:before {
     padding: 0 20px;
   }
 }
+@media (min-width: 400px) {
+  .contact-us .form-ask {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media (min-width: 768px) {
   .contact-us .list {
     padding: 0;
@@ -1238,79 +1340,6 @@ input[type="submit"].button-white:focus:before {
   }
   .contact-us .list dt .fa {
     margin-bottom: 10px;
-  }
-  .contact-us .form-ask {
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .contact-us .form-ask .form-area {
-    transform: skew(-22deg, 0);
-    -webkit-transform: skew(-22deg, 0);
-    -moz-transform: skew(-22deg, 0);
-    -o-transform: skew(-22deg, 0);
-    -ms-transform: skew(-22deg, 0);
-    position: relative;
-    right: -30px;
-  }
-  .contact-us .form-ask input,
-  .contact-us .form-ask textarea {
-    background: transparent;
-  }
-  .contact-us .form-ask .textarea {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  .contact-us .form-ask .form-line {
-    position: relative;
-    z-index: 1;
-    transform: skew(22deg, 0);
-    -webkit-transform: skew(22deg, 0);
-    -moz-transform: skew(22deg, 0);
-    -o-transform: skew(22deg, 0);
-    -ms-transform: skew(22deg, 0);
-  }
-  .contact-us .form-ask .form-line:before {
-    display: block;
-    content: '\0020';
-    overflow: hidden;
-    background: #fff;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    transform: skew(-22deg, 0);
-    -webkit-transform: skew(-22deg, 0);
-    -moz-transform: skew(-22deg, 0);
-    -o-transform: skew(-22deg, 0);
-    -ms-transform: skew(-22deg, 0);
-    transition: background-color 0.2s ease;
-    z-index: -1;
-  }
-  .contact-us .form-ask .form-line.form-line-2-col:before {
-    display: none;
-  }
-  .contact-us .form-ask .form-line.form-line-2-col .col {
-    position: relative;
-  }
-  .contact-us .form-ask .form-line.form-line-2-col .col:before {
-    display: block;
-    content: '\0020';
-    overflow: hidden;
-    background: #fff;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 4px;
-    right: 4px;
-    transform: skew(-22deg, 0);
-    -webkit-transform: skew(-22deg, 0);
-    -moz-transform: skew(-22deg, 0);
-    -o-transform: skew(-22deg, 0);
-    -ms-transform: skew(-22deg, 0);
-    transition: background-color 0.2s ease;
-    z-index: -1;
   }
   .contact-us .form-ask .form-submit {
     margin-top: 0;
@@ -1321,5 +1350,41 @@ input[type="submit"].button-white:focus:before {
     font-size: 18px;
     padding-top: 12px;
     padding-bottom: 12px;
+  }
+}
+@media (min-width: 1280px) {
+  .contact-us {
+    text-align: left;
+  }
+  .contact-us .space {
+    padding: 43px 0;
+  }
+  .contact-us .list {
+    margin-top: 34px;
+  }
+  .contact-us .list dt,
+  .contact-us .list dd {
+    min-height: 42px;
+    margin-bottom: 26px;
+    padding: 5px;
+    display: block;
+  }
+  .contact-us .list dt {
+    padding-left: 56px;
+    float: left;
+    clear: left;
+    position: relative;
+  }
+  .contact-us .list dt:before {
+    display: none;
+  }
+  .contact-us .list dt .fa {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .contact-us .form-ask {
+    padding-left: 105px;
   }
 }

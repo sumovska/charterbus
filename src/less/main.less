@@ -8,10 +8,10 @@
 // ==========================================================================
 @min-width: 320px;
 @md-width: 768px;
-@lg-width: 1024px;
 @xl-width: 1200px;
 
-@xs: ~"(min-width: 375px)";
+@xxs: ~"(min-width: 375px)";
+@xs: ~"(min-width: 400px)";
 @sm: ~"(min-width: 568px)";
 @md: ~"(min-width: 768px)";
 @lg: ~"(min-width: 1024px)";
@@ -224,7 +224,7 @@ h6 {&:extend(.h6); }
   .h5 { font-size: 27px; }
   .h6 { font-size: 25px; }
 }
-@media @lg {
+@media @xl {
   .h1 { font-size: 56px; margin: @margin-lg 0 @margin-lg; }
   .h2 { font-size: 49px; margin: @margin-lg 0 @margin-lg; }
   .h3 { font-size: 40px; margin: @margin-lg 0 @margin-lg; }
@@ -328,7 +328,7 @@ textarea {
     right: 0;
     top: 0;
     bottom: 0;
-    .skew(-22deg, 0);
+    .skew(-22deg, 0deg);
     transition: background-color @duration;
     z-index: -1;
   }
@@ -356,15 +356,22 @@ textarea {
 .form-line {
   margin-bottom: 12px;
   &:after { .clearfix; }
+  &.form-line-2-col {
+    &:after { .clearfix; }
+    .col {
+      margin-bottom: 12px;
+      &:last-of-type { margin-bottom: 0;}
+    }
+  }
 }
 @media @md {
   .form-line {
     &.form-line-2-col {
       margin-left: -4px;
       margin-right: -4px;
-      &:after { .clearfix; }
       .col {
         width: 50%;
+        margin-bottom: 0;
         padding: 0 4px;
         float: left;
       }
@@ -376,6 +383,70 @@ textarea {
     font-size: 18px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+}
+/* ==========================================================================
+   _FORM-SKEW
+   ========================================================================== */
+.form-skew {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  @media @md {
+    .form-area {
+      .skew(-22deg, 0deg);
+      position: relative;
+      right: 24px;
+      > * {
+        .skew(22deg, 0deg);
+      }
+    }
+    input, textarea {
+      background: transparent;
+    }
+    textarea {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .form-line {
+      position: relative;
+      z-index: 1;
+      &:before {
+        .before;
+        background: @color-white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        .skew(-22deg, 0deg);
+        transition: background-color @duration;
+        z-index: -1;
+      }
+      &.form-line-2-col {
+        &:before { display: none; }
+        .col {
+          position: relative;
+          &:before {
+            .before;
+            background: @color-white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 4px;
+            right: 4px;
+            .skew(-22deg, 0deg);
+            transition: background-color @duration;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+  @media @xl {
+    max-width: 500px;
+    margin: 0;
+    .form-area { right: 10px; }
   }
 }
 /* ==========================================================================
@@ -658,7 +729,7 @@ textarea {
         right: 0;
         top: 0;
         bottom: 0;
-        .skew(-22deg, 0);
+        .skew(-22deg, 0deg);
         transition: background-color @duration;
         z-index: -1;
       }
@@ -1035,7 +1106,7 @@ textarea {
       p:last-of-type { margin-bottom: 0; }
     }
   }
-  @media @xs {
+  @media @xxs {
     .list {
       font-size: 14px;
       .entry {
@@ -1149,8 +1220,14 @@ textarea {
     }
     .form-submit { margin-top: 26px; }
   }
-  @media @xs {
+  @media @xxs {
     .list { padding: 0 20px; }
+  }
+  @media @xs {
+    .form-ask {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   @media @md {
     .list {
@@ -1163,56 +1240,6 @@ textarea {
       }
     }
     .form-ask {
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-      .form-area {
-        .skew(-22deg, 0);
-        position: relative;
-        right: -30px;
-      }
-      input, textarea {
-        background: transparent;
-      }
-      .textarea {
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-      .form-line {
-        position: relative;
-        z-index: 1;
-        .skew(22deg, 0);
-        &:before {
-          .before;
-          background: @color-white;
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          .skew(-22deg, 0);
-          transition: background-color @duration;
-          z-index: -1;
-        }
-        &.form-line-2-col {
-          &:before { display: none; }
-          .col {
-            position: relative;
-            &:before {
-              .before;
-              background: @color-white;
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 4px;
-              right: 4px;
-              .skew(-22deg, 0);
-              transition: background-color @duration;
-              z-index: -1;
-            }
-          }
-        }
-      }
       .form-submit {
         margin-top: 0;
         .button {
@@ -1223,6 +1250,37 @@ textarea {
           padding-bottom: 12px;
         }
       }
+    }
+  }
+  @media @xl {
+    text-align: left;
+    .space {
+      padding: 43px 0;
+    }
+    .list {
+      margin-top: 34px;
+      dt, dd {
+        min-height: 42px;
+        margin-bottom: 26px;
+        padding: 5px;
+        display: block;
+      }
+      dt {
+        padding-left: 56px;
+        float: left;
+        clear: left;
+        position: relative;
+        &:before { display: none; }
+        .fa {
+          margin: 0;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+    .form-ask {
+      padding-left: 105px;
     }
   }
 }
