@@ -160,12 +160,12 @@ p {
 a {
   color: @color-brown;
   outline: none;
-  text-decoration: underline;
+  text-decoration: none;
   transition: color @duration;
 
   &:hover, &:focus {
     outline: none;
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 audio, canvas, img, video { vertical-align: middle; }
@@ -312,7 +312,6 @@ textarea {
   display: inline-block;
   color: @color-white;
   text-align: center;
-  text-decoration: none;
   text-transform: uppercase;
   background: transparent;
   border: none;
@@ -334,6 +333,7 @@ textarea {
   }
 
   &:hover, &:focus {
+    text-decoration: none;
     &:before {
       background-color: @color-red-dark;
     }
@@ -531,21 +531,28 @@ textarea {
       vertical-align: top;
     }
     ul {
-      margin: 0;
-      padding: 0;
+      min-width: 180px;
+      margin: -10px 0 0 -10px;
+      padding: 37px 10px 10px 10px;
       list-style: none;
       display: inline-block;
       vertical-align: top;
+      position: relative;
+      transition: background-color @duration, box-shadow @duration;
       li {
         display: none;
         &.active {
           display: block;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          white-space: nowrap;
           a {
-            padding-right: 13px;
-            text-decoration: none;
+            margin-right: 13px;
             border-bottom: 1px dashed @color-brown;
             display: block;
             position: relative;
+            transition: border-bottom-color @duration;
             &:before {
               .before;
               width: 0;
@@ -554,11 +561,22 @@ textarea {
               border-width: 5px 5px 0 5px;
               border-color: @color-brown transparent transparent transparent;
               position: absolute;
-              right: 0;
+              right: -13px;
               top: 11px;
             }
+            &:hover {
+              border-bottom-color: transparent;
+            }
+            &:hover, &:focus {text-decoration: none;}
           }
         }
+      }
+      &.open {
+        background-color: @color-white;
+        .color-black(.3);
+        box-shadow: 0 0 4px @color;
+        z-index: 100;
+        li { display: block;}
       }
     }
   }
@@ -573,11 +591,11 @@ textarea {
     display: block;
     color: @color-white;
     cursor: default;
-    text-decoration: none;
     font-weight: normal;
     .brown {
       color: @color-brown;
     }
+    &:hover, &:focus { text-decoration: none;}
   }
   .clock {
     margin-bottom: 18px;
@@ -675,7 +693,7 @@ textarea {
           &.active {
             a {
               &:before {
-                top: 15px;
+                top: 14px;
               }
             }
           }
@@ -747,9 +765,9 @@ textarea {
             padding: 4px 10px;
             display: block;
             color: @color-white;
-            text-decoration: none;
-            &:hover {
+            &:hover, &:focus {
               color: @color-mustard;
+              text-decoration: none;
             }
           }
           &.active {
@@ -801,11 +819,9 @@ textarea {
       }
       .mail {
         color: @color-font;
-        text-decoration: none;
       }
       .tel {
         color: @color-font;
-        text-decoration: none;
         cursor: default;
         &:hover, &:focus { text-decoration: none; }
       }
@@ -856,10 +872,6 @@ textarea {
         }
         a {
           color: @color-font;
-          text-decoration: none;
-          &:hover {
-            text-decoration: underline;
-          }
         }
       }
     }
@@ -1207,10 +1219,12 @@ textarea {
     }
     .tel, .mail {
       color: @color-font;
-      text-decoration: none;
       white-space: nowrap;
     }
-    .tel { cursor: default; }
+    .tel {
+      cursor: default;
+      &:hover, &:focus { text-decoration: none; }
+    }
   }
   .form-ask {
     margin-left: -10px;

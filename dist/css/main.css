@@ -47,13 +47,13 @@ p {
 a {
   color: #86564a;
   outline: none;
-  text-decoration: underline;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 a:hover,
 a:focus {
   outline: none;
-  text-decoration: none;
+  text-decoration: underline;
 }
 audio,
 canvas,
@@ -288,7 +288,6 @@ input[type="submit"] {
   display: inline-block;
   color: #fff;
   text-align: center;
-  text-decoration: none;
   text-transform: uppercase;
   background: transparent;
   border: none;
@@ -315,6 +314,14 @@ input[type="submit"]:before {
   -ms-transform: skew(-22deg, 0deg);
   transition: background-color 0.2s ease;
   z-index: -1;
+}
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus {
+  text-decoration: none;
 }
 .button:hover:before,
 button:hover:before,
@@ -570,24 +577,31 @@ input[type="submit"].button-white:focus:before {
   vertical-align: top;
 }
 .header .city ul {
-  margin: 0;
-  padding: 0;
+  min-width: 180px;
+  margin: -10px 0 0 -10px;
+  padding: 37px 10px 10px 10px;
   list-style: none;
   display: inline-block;
   vertical-align: top;
+  position: relative;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 .header .city ul li {
   display: none;
 }
 .header .city ul li.active {
   display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  white-space: nowrap;
 }
 .header .city ul li.active a {
-  padding-right: 13px;
-  text-decoration: none;
+  margin-right: 13px;
   border-bottom: 1px dashed #86564a;
   display: block;
   position: relative;
+  transition: border-bottom-color 0.2s ease;
 }
 .header .city ul li.active a:before {
   display: block;
@@ -599,8 +613,23 @@ input[type="submit"].button-white:focus:before {
   border-width: 5px 5px 0 5px;
   border-color: #86564a transparent transparent transparent;
   position: absolute;
-  right: 0;
+  right: -13px;
   top: 11px;
+}
+.header .city ul li.active a:hover {
+  border-bottom-color: transparent;
+}
+.header .city ul li.active a:hover,
+.header .city ul li.active a:focus {
+  text-decoration: none;
+}
+.header .city ul.open {
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+.header .city ul.open li {
+  display: block;
 }
 .header .button-order {
   margin-bottom: 21px;
@@ -613,11 +642,14 @@ input[type="submit"].button-white:focus:before {
   display: block;
   color: #fff;
   cursor: default;
-  text-decoration: none;
   font-weight: normal;
 }
 .header .tel .brown {
   color: #86564a;
+}
+.header .tel:hover,
+.header .tel:focus {
+  text-decoration: none;
 }
 .header .clock {
   margin-bottom: 18px;
@@ -720,7 +752,7 @@ input[type="submit"].button-white:focus:before {
     top: 20px;
   }
   .header .city ul li.active a:before {
-    top: 15px;
+    top: 14px;
   }
   .header .tel {
     font-size: 32px;
@@ -796,10 +828,11 @@ input[type="submit"].button-white:focus:before {
     padding: 4px 10px;
     display: block;
     color: #fff;
-    text-decoration: none;
   }
-  .header .nav ul li a:hover {
+  .header .nav ul li a:hover,
+  .header .nav ul li a:focus {
     color: #f3c14d;
+    text-decoration: none;
   }
   .header .nav ul li.active a {
     color: #f3c14d;
@@ -859,11 +892,9 @@ input[type="submit"].button-white:focus:before {
 }
 .information .contacts .line .mail {
   color: #444;
-  text-decoration: none;
 }
 .information .contacts .line .tel {
   color: #444;
-  text-decoration: none;
   cursor: default;
 }
 .information .contacts .line .tel:hover,
@@ -920,10 +951,6 @@ input[type="submit"].button-white:focus:before {
 }
 .information .links ul li a {
   color: #444;
-  text-decoration: none;
-}
-.information .links ul li a:hover {
-  text-decoration: underline;
 }
 .information .payment ul {
   margin: 0 0 34px;
@@ -1305,11 +1332,14 @@ input[type="submit"].button-white:focus:before {
 .contact-us .list .tel,
 .contact-us .list .mail {
   color: #444;
-  text-decoration: none;
   white-space: nowrap;
 }
 .contact-us .list .tel {
   cursor: default;
+}
+.contact-us .list .tel:hover,
+.contact-us .list .tel:focus {
+  text-decoration: none;
 }
 .contact-us .form-ask {
   margin-left: -10px;

@@ -15,6 +15,16 @@ $(document).ready(function () {
 	/*** Header ***/
 	$('.header').each(function () {
 		$(this).append('<span class="toggle"></span>');
+		$('.city', this).each(function () {
+			var _list = $('ul', this);
+			_list.each(function () {
+				$('a', this).on('click', function () {
+					_list.toggleClass('open');
+					$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
+					return false;
+				});
+			});
+		});
 	});
 
 });
