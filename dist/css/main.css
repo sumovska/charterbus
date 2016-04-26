@@ -355,6 +355,22 @@ input[type="submit"].button-white:focus:before {
   content: '\0020';
   clear: both;
 }
+@media (min-width: 768px) {
+  .form-line.form-line-2-col {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+  .form-line.form-line-2-col:after {
+    display: table;
+    content: '\0020';
+    clear: both;
+  }
+  .form-line.form-line-2-col .col {
+    width: 50%;
+    padding: 0 4px;
+    float: left;
+  }
+}
 @media (min-width: 1280px) {
   .button,
   button,
@@ -1165,7 +1181,7 @@ input[type="submit"].button-white:focus:before {
   display: block;
   content: '\0020';
   overflow: hidden;
-  height: 32px;
+  height: 30px;
 }
 .contact-us .list dt:first-of-type:before {
   height: 0;
@@ -1213,5 +1229,97 @@ input[type="submit"].button-white:focus:before {
 @media (min-width: 375px) {
   .contact-us .list {
     padding: 0 20px;
+  }
+}
+@media (min-width: 768px) {
+  .contact-us .list {
+    padding: 0;
+    font-size: 18px;
+  }
+  .contact-us .list dt .fa {
+    margin-bottom: 10px;
+  }
+  .contact-us .form-ask {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contact-us .form-ask .form-area {
+    transform: skew(-22deg, 0);
+    -webkit-transform: skew(-22deg, 0);
+    -moz-transform: skew(-22deg, 0);
+    -o-transform: skew(-22deg, 0);
+    -ms-transform: skew(-22deg, 0);
+    position: relative;
+    right: -30px;
+  }
+  .contact-us .form-ask input,
+  .contact-us .form-ask textarea {
+    background: transparent;
+  }
+  .contact-us .form-ask .textarea {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .contact-us .form-ask .form-line {
+    position: relative;
+    z-index: 1;
+    transform: skew(22deg, 0);
+    -webkit-transform: skew(22deg, 0);
+    -moz-transform: skew(22deg, 0);
+    -o-transform: skew(22deg, 0);
+    -ms-transform: skew(22deg, 0);
+  }
+  .contact-us .form-ask .form-line:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: skew(-22deg, 0);
+    -webkit-transform: skew(-22deg, 0);
+    -moz-transform: skew(-22deg, 0);
+    -o-transform: skew(-22deg, 0);
+    -ms-transform: skew(-22deg, 0);
+    transition: background-color 0.2s ease;
+    z-index: -1;
+  }
+  .contact-us .form-ask .form-line.form-line-2-col:before {
+    display: none;
+  }
+  .contact-us .form-ask .form-line.form-line-2-col .col {
+    position: relative;
+  }
+  .contact-us .form-ask .form-line.form-line-2-col .col:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    transform: skew(-22deg, 0);
+    -webkit-transform: skew(-22deg, 0);
+    -moz-transform: skew(-22deg, 0);
+    -o-transform: skew(-22deg, 0);
+    -ms-transform: skew(-22deg, 0);
+    transition: background-color 0.2s ease;
+    z-index: -1;
+  }
+  .contact-us .form-ask .form-submit {
+    margin-top: 0;
+  }
+  .contact-us .form-ask .form-submit .button {
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
