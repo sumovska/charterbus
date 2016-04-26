@@ -523,7 +523,7 @@ textarea {
     font-weight: normal;
   }
   .city {
-    margin-bottom: 26px;
+    margin-bottom: 12px;
     font-size: 14px;
     font-weight: 600;
     .h {
@@ -1187,7 +1187,7 @@ textarea {
   text-align: center;
 
   .space {
-    padding: 32px 0;
+    padding: 32px 0 44px;
     .gradient-x3(@color-white-smoke-shade1, @color-white-smoke, @color-platinum);
   }
   .list {
@@ -1296,5 +1296,33 @@ textarea {
     .form-ask {
       padding-left: 105px;
     }
+  }
+}
+/* ==========================================================================
+   _MAP
+   ========================================================================== */
+.map {
+  height: 440px;
+  margin-bottom: -61px;
+  &:before {
+    .before;
+    height: 20px;
+    background: url("@{images}/shadow.jpg") 50% 0 no-repeat;
+    background-size: auto 100%;
+    opacity: .98;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+  @media @md {
+    height: 400px;
+    &:after { height: 26px; }
+  }
+  @media @xl {
+    height: 540px;
+    margin-bottom: -80px;
+    &:after { height: 30px; }
   }
 }
