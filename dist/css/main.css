@@ -353,6 +353,20 @@ button.button-white:focus:before,
 input[type="submit"].button-white:focus:before {
   background-color: #fff;
 }
+.button.button-brown:before,
+button.button-brown:before,
+input[type="submit"].button-brown:before {
+  background: #86564a;
+  border-bottom-color: #59342a;
+}
+.button.button-brown:hover:before,
+button.button-brown:hover:before,
+input[type="submit"].button-brown:hover:before,
+.button.button-brown:focus:before,
+button.button-brown:focus:before,
+input[type="submit"].button-brown:focus:before {
+  background-color: #59342a;
+}
 /* FORM LINE */
 .form-line {
   margin-bottom: 12px;
@@ -1644,4 +1658,50 @@ input[type="submit"].button-white:focus:before {
     top: 0;
     margin: auto auto;
   }
+}
+/* ==========================================================================
+   _CATALOG
+   ========================================================================== */
+.catalog .list {
+  margin: 0 -10px;
+}
+.catalog .list .item .space {
+  padding: 30px 28px;
+  background: #ededed;
+}
+.catalog .list .item .name {
+  margin-bottom: 14px;
+  font-size: 24px;
+  line-height: normal;
+  color: #86564a;
+  text-align: center;
+  font-weight: normal;
+}
+.catalog .list .item .info {
+  margin: 0;
+  font-size: 17px;
+}
+.catalog .list .item .info dt {
+  margin-right: 6px;
+  margin-bottom: 6px;
+  float: left;
+  clear: left;
+}
+.catalog .list .item .info dt .icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.catalog .list .item .info dd {
+  margin-bottom: 6px;
+  padding: 8px 0 0 0;
+  font-weight: bold;
+}
+.catalog .list .item .image {
+  margin: 0 0 28px;
+}
+.catalog .list .item .image img {
+  width: 100%;
+  height: auto;
 }
