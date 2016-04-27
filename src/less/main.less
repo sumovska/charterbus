@@ -461,6 +461,7 @@ textarea {
   text-align: center;
   position: relative;
   z-index: 100;
+  cursor: default;
 
   &:before {
     .before;
@@ -484,6 +485,9 @@ textarea {
     right: 0;
     top: 100%;
     z-index: -1;
+  }
+  .body-index & {
+    &:after { display: none;}
   }
   .toggle {
     width: 40px;
@@ -537,6 +541,7 @@ textarea {
       list-style: none;
       display: inline-block;
       vertical-align: top;
+      text-align: left;
       position: relative;
       transition: background-color @duration, box-shadow @duration;
       li {
@@ -790,6 +795,7 @@ textarea {
   .gradient-x3(@color-white-smoke-shade1, @color-white-smoke, @color-white-smoke-shade2);
   position: relative;
   z-index: 1;
+  cursor: default;
   &:after {
     .before;
     clear: both;
@@ -948,8 +954,8 @@ textarea {
     padding-top: 38px;
     &:before {
       .before;
-      background: url('@{images}/road.png') 124% 88% no-repeat;
-      background-size: 1558px auto;
+      background: url('@{images}/roads/information.png') 0 100% no-repeat;
+      background-size: 100% 100%;
       position: absolute;
       left: 0;
       right: 0;
@@ -1324,5 +1330,158 @@ textarea {
     height: 540px;
     margin-bottom: -80px;
     &:after { height: 30px; }
+  }
+}
+/* ==========================================================================
+   _INDEX
+   ========================================================================== */
+.index {
+  padding: 34px 0 50px;
+  .gradient-x3(@color-mustard-shade1, @color-mustard, @color-mustard-shade2);
+  position: relative;
+  z-index: 1;
+  &:after {
+    .before;
+    clear: both;
+    height: 20px;
+    background: url("@{images}/shadow.jpg") 50% 0 no-repeat;
+    background-size: auto 100%;
+    opacity: .98;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+  }
+  .buses-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    li {
+      margin-bottom: 34px;
+      color: @color-brown;
+      &:nth-child(even) { color: @color-white; }
+      &:last-child { margin-bottom: 0; }
+      .image {
+        margin-bottom: 3px;
+        img {
+          width: 240px;
+          height: auto;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+      .name {
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 26px;
+      }
+      .seats {
+        margin: 0;
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: normal;
+        .number {
+          display: block;
+          font-size: 35px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  @media @md {
+    padding: 24px 0;
+    &:after { height: 26px;}
+    .wrapper {
+      overflow: hidden;
+    }
+    .buses-list {
+      margin: 0 -55px;
+      li {
+        width: 32%;
+        display: inline-block;
+        vertical-align: bottom;
+        &:nth-child(4) { width: 35%; vertical-align: top; }
+        &:nth-child(5) { width: 39%; vertical-align: top; }
+        .image {
+          margin-bottom: 8px;
+        }
+        .name {
+          margin-bottom: 12px;
+        }
+        .seats {
+          font-size: 28px;
+          line-height: normal;
+          .number {
+            font-size: 40px;
+            line-height: 27px;
+          }
+        }
+      }
+    }
+  }
+  @media @xl {
+    padding: 20px 0;
+    &:before {
+      .before;
+      background: url('@{images}/roads/index.png') 0 50% no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+    }
+    &:after { height: 30px;}
+    .buses-list {
+      margin: 0;
+      li {
+        width: 20%;
+        float: left;
+        display: block;
+        &:nth-child(4), &:nth-child(5) { width: 20%; }
+        .image {
+          height: 146px;
+          margin-bottom: 18px;
+          position: relative;
+          img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          }
+        }
+        .name {
+          margin-bottom: 20px;
+          font-size: 24px;
+        }
+        .seats {
+          font-size: 32px;
+          .number {
+            font-size: 48px;
+            line-height: 33px;
+          }
+        }
+        &:nth-child(even) {
+          margin-top: 108px;
+          padding-bottom: 164px;
+          position: relative;
+          .image {
+            margin: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            img {
+              top: 0;
+              margin: auto auto;
+            }
+          }
+        }
+      }
+    }
   }
 }

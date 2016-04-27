@@ -499,6 +499,7 @@ input[type="submit"].button-white:focus:before {
   text-align: center;
   position: relative;
   z-index: 100;
+  cursor: default;
 }
 .header:before {
   display: block;
@@ -526,6 +527,9 @@ input[type="submit"].button-white:focus:before {
   right: 0;
   top: 100%;
   z-index: -1;
+}
+.body-index .header:after {
+  display: none;
 }
 .header .toggle {
   width: 40px;
@@ -583,6 +587,7 @@ input[type="submit"].button-white:focus:before {
   list-style: none;
   display: inline-block;
   vertical-align: top;
+  text-align: left;
   position: relative;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -853,6 +858,7 @@ input[type="submit"].button-white:focus:before {
   background: linear-gradient(to right, #ebebeb, #f5f5f5, #e9e9e9);
   position: relative;
   z-index: 1;
+  cursor: default;
 }
 .information:after {
   display: block;
@@ -1026,8 +1032,8 @@ input[type="submit"].button-white:focus:before {
     display: block;
     content: '\0020';
     overflow: hidden;
-    background: url('../img/road.png') 124% 88% no-repeat;
-    background-size: 1558px auto;
+    background: url('../img/roads/information.png') 0 100% no-repeat;
+    background-size: 100% 100%;
     position: absolute;
     left: 0;
     right: 0;
@@ -1454,5 +1460,188 @@ input[type="submit"].button-white:focus:before {
   }
   .map:after {
     height: 30px;
+  }
+}
+/* ==========================================================================
+   _INDEX
+   ========================================================================== */
+.index {
+  padding: 34px 0 50px;
+  background-color: #eda73e;
+  background: -webkit-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -moz-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -ms-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -o-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: linear-gradient(to right, #eda73e, #f3c14d, #f0ad47);
+  position: relative;
+  z-index: 1;
+}
+.index:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  clear: both;
+  height: 20px;
+  background: url("../img/shadow.jpg") 50% 0 no-repeat;
+  background-size: auto 100%;
+  opacity: .98;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+}
+.index .buses-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.index .buses-list li {
+  margin-bottom: 34px;
+  color: #86564a;
+}
+.index .buses-list li:nth-child(even) {
+  color: #fff;
+}
+.index .buses-list li:last-child {
+  margin-bottom: 0;
+}
+.index .buses-list li .image {
+  margin-bottom: 3px;
+}
+.index .buses-list li .image img {
+  width: 240px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.index .buses-list li .name {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+}
+.index .buses-list li .seats {
+  margin: 0;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: normal;
+}
+.index .buses-list li .seats .number {
+  display: block;
+  font-size: 35px;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .index {
+    padding: 24px 0;
+  }
+  .index:after {
+    height: 26px;
+  }
+  .index .wrapper {
+    overflow: hidden;
+  }
+  .index .buses-list {
+    margin: 0 -55px;
+  }
+  .index .buses-list li {
+    width: 32%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .index .buses-list li:nth-child(4) {
+    width: 35%;
+    vertical-align: top;
+  }
+  .index .buses-list li:nth-child(5) {
+    width: 39%;
+    vertical-align: top;
+  }
+  .index .buses-list li .image {
+    margin-bottom: 8px;
+  }
+  .index .buses-list li .name {
+    margin-bottom: 12px;
+  }
+  .index .buses-list li .seats {
+    font-size: 28px;
+    line-height: normal;
+  }
+  .index .buses-list li .seats .number {
+    font-size: 40px;
+    line-height: 27px;
+  }
+}
+@media (min-width: 1280px) {
+  .index {
+    padding: 20px 0;
+  }
+  .index:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    background: url('../img/roads/index.png') 0 50% no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+  }
+  .index:after {
+    height: 30px;
+  }
+  .index .buses-list {
+    margin: 0;
+  }
+  .index .buses-list li {
+    width: 20%;
+    float: left;
+    display: block;
+  }
+  .index .buses-list li:nth-child(4),
+  .index .buses-list li:nth-child(5) {
+    width: 20%;
+  }
+  .index .buses-list li .image {
+    height: 146px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .index .buses-list li .image img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .index .buses-list li .name {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  .index .buses-list li .seats {
+    font-size: 32px;
+  }
+  .index .buses-list li .seats .number {
+    font-size: 48px;
+    line-height: 33px;
+  }
+  .index .buses-list li:nth-child(even) {
+    margin-top: 108px;
+    padding-bottom: 164px;
+    position: relative;
+  }
+  .index .buses-list li:nth-child(even) .image {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .index .buses-list li:nth-child(even) .image img {
+    top: 0;
+    margin: auto auto;
   }
 }
