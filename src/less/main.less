@@ -24,6 +24,8 @@
 @color-black: #000;
 @color-red: #f01f2b;
 @color-red-dark: #bb0e1a;
+@color-orange-pastel: #f3b04c;
+@color-gold: #bd8532;
 @color-mustard: #f3c14d;
 @color-mustard-shade1: #eda73e;
 @color-mustard-shade2: #f0ad47;
@@ -363,6 +365,17 @@ textarea {
       }
     }
   }
+  &.button-yellow {
+    &:before {
+      background: @color-orange-pastel;
+      border-bottom-color: @color-gold;
+    }
+    &:hover, &:focus {
+      &:before {
+        background-color: @color-gold;
+      }
+    }
+  }
 }
 /* FORM LINE */
 .form-line {
@@ -393,8 +406,7 @@ textarea {
 @media @xl {
   .button, button, input[type="submit"] {
     font-size: 18px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 18px 30px;
   }
 }
 /* ==========================================================================
@@ -1501,11 +1513,15 @@ textarea {
    _CATALOG
    ========================================================================== */
 .catalog {
+  .heading { text-align: center; }
   .list {
     margin: 0 -10px;
     .item {
+      max-width: 375px;
+      margin: 0 auto 1px;
+      &:nth-of-type(n+3) { display: none;}
       .space {
-        padding: 30px 28px;
+        padding: 30px 26px 45px;
         background: @color-gray-light;
       }
       .name {
@@ -1516,34 +1532,118 @@ textarea {
         text-align: center;
         font-weight: normal;
       }
-      .info {
-        margin: 0;
-        font-size: 17px;
-        dt {
-          margin-right: 6px;
-          margin-bottom: 6px;
-          float: left;
-          clear: left;
-          .icon {
-            width: 30px;
-            height: 30px;
-            display: inline-block;
-            vertical-align: bottom;
-          }
-        }
-        dd {
-          margin-bottom: 6px;
-          padding: 8px 0 0 0;
-          font-weight: bold;
-        }
-      }
       .image {
-        margin: 0 0 28px;
+        margin: 0 0 32px;
         img {
           width: 100%;
           height: auto;
         }
       }
+      .info {
+        margin: 0 -10px 26px 0;
+        font-size: 17px;
+        dt {
+          min-height: 30px;
+          margin-right: 2px;
+          padding: 4px 0 4px 34px;
+          float: left;
+          clear: left;
+          position: relative;
+          .icon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+        dd {
+          min-height: 30px;
+          margin-bottom: 6px;
+          padding: 4px 0;
+          font-weight: bold;
+        }
+        .number {
+          width: 38px;
+          height: 38px;
+          margin: -10px 0 -10px 6px;
+          padding: 7px;
+          background: @color-mustard;
+          border-radius: 50%;
+          text-align: center;
+          display: inline-block;
+          color: @color-white;
+        }
+      }
+      .bottom {
+        text-align: center;
+        .button {
+          width: 45%;
+          margin: 0 3px;
+          padding-top: 9px;
+          padding-bottom: 9px;
+          font-size: 15px;
+        }
+      }
     }
+  }
+  .more { display: none;}
+  @media @md {
+    padding-top: 16px;
+    .list {
+      margin: 0 -1px 18px;
+      &:after { .clearfix; }
+      .item {
+        width: 50%;
+        max-width: none;
+        padding: 0 1px;
+        float: left;
+        &:nth-of-type(n+3) { display: block;}
+        &:nth-of-type(n+5) { display: none;}
+        &:nth-of-type(even){ margin-left: -1px; }
+        &:nth-of-type(2n+1){ clear: left; }
+        .name { text-align: left; }
+      }
+    }
+  }
+  @media @xl {
+    padding-top: 0;
+    .heading { text-align: left; }
+    .list {
+      margin: 40px -3px 25px;
+      &:after { .clearfix; }
+      .item {
+        width: 33.3%;
+        margin-bottom: 6px;
+        padding: 0 3px;
+        &:nth-of-type(n+5) { display: block;}
+        &:nth-of-type(even){ margin-left: 0; }
+        &:nth-of-type(2n+1){ clear: none; }
+        &:nth-of-type(3n+1){ clear: left; }
+        .space { padding: 32px 20px 50px; }
+        .name { font-size: 26px; }
+        .info {
+          font-size: 18px;
+          dt {
+            margin-right: 4px;
+            padding-left: 40px;
+          }
+          dd { margin-bottom: 4px; }
+          .number {
+            width: 42px;
+            height: 42px;
+            margin-left: 4px;
+          }
+        }
+        .bottom {
+          .button {
+            font-size: 16px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+    .more { display: inline-block; }
   }
 }
