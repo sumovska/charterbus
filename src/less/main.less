@@ -1714,7 +1714,7 @@ textarea {
     }
   }
   @media @xl {
-    padding: 60px 0;
+    padding: 60px 0 40px;
     .heading {
       text-align: left;
     }
@@ -1722,8 +1722,11 @@ textarea {
       margin-top: 40px;
       line-height: 24px;
       li {
-        margin-bottom: 64px;
+        width: 52%;
+        margin-bottom: 58px;
         padding-left: 160px;
+        padding-right: 30px;
+        &:nth-child(even) { width: 48%;}
         .h {
           margin-bottom: 16px;
           font-size: 30px;

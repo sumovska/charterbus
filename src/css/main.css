@@ -1930,7 +1930,7 @@ input[type="submit"].button-yellow:focus:before {
 }
 @media (min-width: 1280px) {
   .features {
-    padding: 60px 0;
+    padding: 60px 0 40px;
   }
   .features .heading {
     text-align: left;
@@ -1940,8 +1940,13 @@ input[type="submit"].button-yellow:focus:before {
     line-height: 24px;
   }
   .features .list li {
-    margin-bottom: 64px;
+    width: 52%;
+    margin-bottom: 58px;
     padding-left: 160px;
+    padding-right: 30px;
+  }
+  .features .list li:nth-child(even) {
+    width: 48%;
   }
   .features .list li .h {
     margin-bottom: 16px;
