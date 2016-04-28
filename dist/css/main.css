@@ -1957,3 +1957,6 @@ input[type="submit"].button-yellow:focus:before {
     height: 134px;
   }
 }
+.about .heading {
+  color: #86564a;
+}
