@@ -16,13 +16,26 @@ $(document).ready(function () {
 	$('.header').each(function () {
 		$(this).append('<span class="toggle"></span>');
 		$('.city', this).each(function () {
-			var _list = $('ul', this);
-			_list.each(function () {
-				$('a', this).on('click', function () {
-					_list.toggleClass('open');
-					$(this).closest('li').addClass('active').siblings('li.active').removeClass('active');
-					return false;
-				});
+			function handler(e) {
+				console.log(e.target);
+				console.log($(e.target).hasClass('dropdown'));
+				if (!($(e.target).hasClass('dropdown') || ($(e.target).closest('.dropdown').length > 0))) {
+					_this.removeClass('open');
+					$('body').off('click touchstart', handler);
+				}
+			}
+
+			var _this = $(this), _link = $('.link', _this);
+			_link.on('click', function (e) {
+				console.log('click');
+				if (_this.hasClass('open')) {
+					$('body').off('click touchstart', handler);
+					_this.removeClass('open');
+				} else {
+					$('body').on('click touchstart', handler);
+					_this.addClass('open');
+				}
+				return false;
 			});
 		});
 	});

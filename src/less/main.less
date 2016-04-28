@@ -576,59 +576,70 @@ textarea {
     margin-bottom: 12px;
     font-size: 14px;
     font-weight: 600;
-    .h {
+    position: relative;
+    z-index: 100;
+    .h, .s {
       display: inline-block;
-      vertical-align: top;
-    }
-    ul {
-      min-width: 180px;
-      margin: -10px 0 0 -10px;
-      padding: 37px 10px 10px 10px;
-      list-style: none;
-      display: inline-block;
-      vertical-align: top;
-      text-align: left;
       position: relative;
-      transition: background-color @duration, box-shadow @duration;
-      li {
-        display: none;
-        &.active {
+    }
+    .link {
+      border-bottom: 1px dashed @color-brown;
+      position: relative;
+      transition: border-color @duration;
+      text-decoration: none !important;
+      &:hover, &focus { border-bottom-color: transparent; text-decoration: none; }
+      &:after {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 5px 0 5px;
+        border-color: @color-brown transparent transparent transparent;
+        margin: auto;
+        display: block;
+        content: '';
+        position: absolute;
+        top: 2px;
+        bottom: 0;
+        right: -14px;
+      }
+    }
+    .dropdown {
+      width: 172px;
+      padding: 14px 18px;
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 2px;
+      background: @color-gray-light;
+      box-shadow: 2px 2px 4px -2px @color-black;
+      text-align: left;
+      .scroll {
+        width: 100%;
+        max-height: 198px;
+        position: relative;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+      .list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 12px;
+        line-height: 14px;
+        color: @color-font;
+        a {
+          padding: 2px 0;
           display: block;
-          position: absolute;
-          top: 10px;
-          left: 10px;
-          white-space: nowrap;
-          a {
-            margin-right: 13px;
-            border-bottom: 1px dashed @color-brown;
-            display: block;
-            position: relative;
-            transition: border-bottom-color @duration;
-            &:before {
-              .before;
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 5px 5px 0 5px;
-              border-color: @color-brown transparent transparent transparent;
-              position: absolute;
-              right: -13px;
-              top: 11px;
-            }
-            &:hover {
-              border-bottom-color: transparent;
-            }
-            &:hover, &:focus { text-decoration: none; }
+          color: @color-font;
+          &:hover, &:focus {
+            color: @color-red;
+            text-decoration: none;
           }
         }
       }
-      &.open {
-        background-color: @color-white;
-        .color-black(.3);
-        box-shadow: 0 0 4px @color;
-        z-index: 100;
-        li { display: block; }
-      }
+    }
+    &.open {
+      .dropdown { display: block; }
     }
   }
   .button-order {
@@ -708,6 +719,7 @@ textarea {
       position: absolute;
       left: 307px;
       top: 24px;
+      z-index: 100;
     }
     .clock {
       margin: 0;
@@ -1986,7 +1998,7 @@ textarea {
       padding: 0;
       list-style: none;
       overflow: hidden;
-      &:after {.clearfix;}
+      &:after { .clearfix; }
       &.slick-initialized {
         height: auto;
         overflow: visible;
@@ -2005,7 +2017,7 @@ textarea {
       padding: 0;
       list-style: none;
       overflow: hidden;
-      &:after {.clearfix;}
+      &:after { .clearfix; }
       &.slick-initialized {
         height: auto;
         overflow: visible;
@@ -2072,7 +2084,7 @@ textarea {
         display: inline-block;
         color: @color-white;
       }
-      .price {white-space: nowrap;}
+      .price { white-space: nowrap; }
     }
     .button-order {
       margin-bottom: 34px;
@@ -2085,22 +2097,22 @@ textarea {
       position: relative;
       p {
         margin-bottom: 12px;
-        &:last-of-type { margin-bottom: 0;}
+        &:last-of-type { margin-bottom: 0; }
       }
       &.ps-container {
         padding-right: 30px;
-        >.ps-scrollbar-y-rail {
+        > .ps-scrollbar-y-rail {
           width: 1px;
           background: @color-font;
           border-radius: 0;
           opacity: 1;
           right: 14px;
-          >.ps-scrollbar-y {
+          > .ps-scrollbar-y {
             width: 18px;
             height: 18px !important;
             background: @color-white;
             border-radius: 50%;
-            box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.19);
+            box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.19);
             right: -9px;
           }
         }
@@ -2125,7 +2137,7 @@ textarea {
       .list {
         max-width: 320px;
         margin-bottom: 0;
-       text-align: left;
+        text-align: left;
         dt {
           .icon {
             margin-right: 6px;

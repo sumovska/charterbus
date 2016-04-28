@@ -649,65 +649,76 @@ input[type="submit"].button-yellow:focus:before {
   margin-bottom: 12px;
   font-size: 14px;
   font-weight: 600;
-}
-.header .city .h {
-  display: inline-block;
-  vertical-align: top;
-}
-.header .city ul {
-  min-width: 180px;
-  margin: -10px 0 0 -10px;
-  padding: 37px 10px 10px 10px;
-  list-style: none;
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
   position: relative;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  z-index: 100;
 }
-.header .city ul li {
-  display: none;
+.header .city .h,
+.header .city .s {
+  display: inline-block;
+  position: relative;
 }
-.header .city ul li.active {
-  display: block;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  white-space: nowrap;
-}
-.header .city ul li.active a {
-  margin-right: 13px;
+.header .city .link {
   border-bottom: 1px dashed #86564a;
-  display: block;
   position: relative;
-  transition: border-bottom-color 0.2s ease;
+  transition: border-color 0.2s ease;
+  text-decoration: none !important;
 }
-.header .city ul li.active a:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
+.header .city .link:hover,
+.header .city .linkfocus {
+  border-bottom-color: transparent;
+  text-decoration: none;
+}
+.header .city .link:after {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 5px 5px 0 5px;
   border-color: #86564a transparent transparent transparent;
+  margin: auto;
+  display: block;
+  content: '';
   position: absolute;
-  right: -13px;
-  top: 11px;
+  top: 2px;
+  bottom: 0;
+  right: -14px;
 }
-.header .city ul li.active a:hover {
-  border-bottom-color: transparent;
+.header .city .dropdown {
+  width: 172px;
+  padding: 14px 18px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 2px;
+  background: #ededed;
+  box-shadow: 2px 2px 4px -2px #000;
+  text-align: left;
 }
-.header .city ul li.active a:hover,
-.header .city ul li.active a:focus {
+.header .city .dropdown .scroll {
+  width: 100%;
+  max-height: 198px;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.header .city .dropdown .list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 12px;
+  line-height: 14px;
+  color: #444;
+}
+.header .city .dropdown .list a {
+  padding: 2px 0;
+  display: block;
+  color: #444;
+}
+.header .city .dropdown .list a:hover,
+.header .city .dropdown .list a:focus {
+  color: #f01f2b;
   text-decoration: none;
 }
-.header .city ul.open {
-  background-color: #fff;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-}
-.header .city ul.open li {
+.header .city.open .dropdown {
   display: block;
 }
 .header .button-order {
@@ -794,6 +805,7 @@ input[type="submit"].button-yellow:focus:before {
     position: absolute;
     left: 307px;
     top: 24px;
+    z-index: 100;
   }
   .header .clock {
     margin: 0;
