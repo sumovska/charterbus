@@ -255,7 +255,9 @@ h6 {&:extend(.h6); }
 .hidden { display: none; }
 .mobile-hidden {
   display: none;
-  @media @xl {  display: block;  }
+  @media @xl {
+    display: block;
+  }
 }
 .text-center { text-align: center; }
 figure {
@@ -865,7 +867,7 @@ textarea {
       margin-bottom: 14px;
       font-size: 18px;
       .fa {
-        margin: 0 2px 0 0;
+        margin: 0 5px 0 0;
         font-size: 26px;
         color: @color-gray-medium;
       }
@@ -969,6 +971,7 @@ textarea {
         .fa {
           width: 24px;
           font-size: 24px;
+          text-align: center;
         }
       }
       .company-logo {
@@ -1003,17 +1006,20 @@ textarea {
     }
   }
   @media @xl {
+    height: 450px;
     padding-top: 38px;
+    padding-bottom: 30px;
     &:before {
       .before;
-      background: url('@{images}/roads/footer.png') 0 100% no-repeat;
-      background-size: 1558px 382px;
+      width: 1558px;
+      height: 382px;
+      margin-left: -779px;
       position: absolute;
-      left: 0;
-      right: 0;
+      left: 50%;
       bottom: 0;
-      top: 0;
       z-index: -1;
+      background: url('@{images}/roads/footer.png') 0 0 no-repeat;
+      .translate-3d(-13.3%, 0, 0);
     }
     &:after { height: 30px; }
     .wrapper {
@@ -1023,7 +1029,7 @@ textarea {
       z-index: 2;
     }
     .contacts {
-      width: 38%;
+      width: 37.5%;
       .heading {
         margin-bottom: 26px;
       }
@@ -1032,11 +1038,11 @@ textarea {
         padding-left: 5px;
       }
       .company-logo {
-        margin: 53px 0 3px;
+        margin: 52px 0 4px 1px;
       }
     }
     .links {
-      width: 29%;
+      width: 29.5%;
       float: left;
       .heading { margin-bottom: 10px; }
     }
@@ -1054,7 +1060,7 @@ textarea {
       }
     }
     .button-order {
-      bottom: 16px;
+      bottom: 17px;
       right: 148px;
     }
   }
@@ -1605,7 +1611,7 @@ textarea {
           display: inline-block;
           color: @color-white;
         }
-        .price {white-space: nowrap;}
+        .price { white-space: nowrap; }
       }
       .bottom {
         text-align: center;
@@ -1792,7 +1798,7 @@ textarea {
         margin-bottom: 58px;
         padding-left: 160px;
         padding-right: 30px;
-        &:nth-child(even) { width: 48%;}
+        &:nth-child(even) { width: 48%; }
         .h {
           margin-bottom: 16px;
           font-size: 30px;
@@ -1813,9 +1819,9 @@ textarea {
   @media @md {
     padding: 28px 0;
   }
-@media @xl {
-  padding: 34px 0;
-}
+  @media @xl {
+    padding: 34px 0;
+  }
 }
 /* ==========================================================================
    _TESTIMONIALS
@@ -1961,7 +1967,7 @@ textarea {
       padding: 0;
       list-style: none;
       overflow: hidden;
-      &:after {.clearfix;}
+      &:after { .clearfix; }
       &.slick-iitialized {
         height: auto;
         overflow: visible;
@@ -1980,7 +1986,7 @@ textarea {
       padding: 0;
       list-style: none;
       overflow: hidden;
-      &:after {.clearfix;}
+      &:after { .clearfix; }
       &.slick-iitialized {
         height: auto;
         overflow: visible;
@@ -2013,9 +2019,9 @@ textarea {
       text-align: center;
       dt {
         display: inline;
-        &:before {.before; height: 7px;}
+        &:before { .before; height: 7px; }
         &:first-of-type {
-          &:before { height: 0;}
+          &:before { height: 0; }
         }
         .icon {
           width: 30px;
@@ -2040,7 +2046,7 @@ textarea {
         display: inline-block;
         color: @color-white;
       }
-      .price {white-space: nowrap;}
+      .price { white-space: nowrap; }
     }
   }
 }

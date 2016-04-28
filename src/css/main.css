@@ -968,7 +968,7 @@ input[type="submit"].button-yellow:focus:before {
   font-size: 18px;
 }
 .footer .contacts .line .fa {
-  margin: 0 2px 0 0;
+  margin: 0 5px 0 0;
   font-size: 26px;
   color: #d7d7d7;
 }
@@ -1077,6 +1077,7 @@ input[type="submit"].button-yellow:focus:before {
   .footer .contacts .line .fa {
     width: 24px;
     font-size: 24px;
+    text-align: center;
   }
   .footer .contacts .company-logo {
     margin: 62px 0 7px;
@@ -1108,20 +1109,27 @@ input[type="submit"].button-yellow:focus:before {
 }
 @media (min-width: 1280px) {
   .footer {
+    height: 450px;
     padding-top: 38px;
+    padding-bottom: 30px;
   }
   .footer:before {
     display: block;
     content: '\0020';
     overflow: hidden;
-    background: url('../img/roads/footer.png') 0 100% no-repeat;
-    background-size: 1558px 382px;
+    width: 1558px;
+    height: 382px;
+    margin-left: -779px;
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 50%;
     bottom: 0;
-    top: 0;
     z-index: -1;
+    background: url('../img/roads/footer.png') 0 0 no-repeat;
+    -webkit-transform: translate3d(-13.3%, 0, 0);
+    -moz-transform: translate3d(-13.3%, 0, 0);
+    -ms-transform: translate3d(-13.3%, 0, 0);
+    -o-transform: translate3d(-13.3%, 0, 0);
+    transform: translate3d(-13.3%, 0, 0);
   }
   .footer:after {
     height: 30px;
@@ -1133,7 +1141,7 @@ input[type="submit"].button-yellow:focus:before {
     z-index: 2;
   }
   .footer .contacts {
-    width: 38%;
+    width: 37.5%;
   }
   .footer .contacts .heading {
     margin-bottom: 26px;
@@ -1143,10 +1151,10 @@ input[type="submit"].button-yellow:focus:before {
     padding-left: 5px;
   }
   .footer .contacts .company-logo {
-    margin: 53px 0 3px;
+    margin: 52px 0 4px 1px;
   }
   .footer .links {
-    width: 29%;
+    width: 29.5%;
     float: left;
   }
   .footer .links .heading {
@@ -1170,7 +1178,7 @@ input[type="submit"].button-yellow:focus:before {
     margin: 0 9px;
   }
   .footer .button-order {
-    bottom: 16px;
+    bottom: 17px;
     right: 148px;
   }
 }
