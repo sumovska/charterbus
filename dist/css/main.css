@@ -1158,35 +1158,35 @@ input[type="submit"].button-yellow:focus:before {
   }
 }
 /* ==========================================================================
-   _TESTIMONIALS
+   _PAGE-TESTIMONIALS
    ========================================================================== */
-.testimonials {
+.page-testimonials {
   text-align: center;
 }
-.testimonials .list .entry {
+.page-testimonials .list .entry {
   margin-bottom: 55px;
 }
-.testimonials .list .entry:last-of-type {
+.page-testimonials .list .entry:last-of-type {
   margin-bottom: 44px;
 }
-.testimonials .list .entry .name {
+.page-testimonials .list .entry .name {
   margin: 0 0 13px;
   color: #86564a;
   font-weight: bold;
   font-size: 18px;
 }
-.testimonials .list .entry .name .time {
+.page-testimonials .list .entry .name .time {
   font-weight: normal;
   color: #444;
 }
-.testimonials .list .entry .comment {
+.page-testimonials .list .entry .comment {
   padding: 16px 16px 20px;
   line-height: 24px;
   background: #ebebeb;
   position: relative;
   text-align: left;
 }
-.testimonials .list .entry .comment:before {
+.page-testimonials .list .entry .comment:before {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -1199,44 +1199,44 @@ input[type="submit"].button-yellow:focus:before {
   top: 100%;
   right: 41px;
 }
-.testimonials .list .entry .comment p:last-of-type {
+.page-testimonials .list .entry .comment p:last-of-type {
   margin-bottom: 0;
 }
 @media (min-width: 768px) {
-  .testimonials .list {
+  .page-testimonials .list {
     margin-top: 36px;
     text-align: left;
   }
-  .testimonials .list .entry {
+  .page-testimonials .list .entry {
     margin-bottom: 58px;
   }
-  .testimonials .list .entry .name {
+  .page-testimonials .list .entry .name {
     margin-bottom: 20px;
   }
-  .testimonials .list .entry .comment {
+  .page-testimonials .list .entry .comment {
     padding: 24px;
   }
-  .testimonials .list .entry .comment:before {
+  .page-testimonials .list .entry .comment:before {
     right: 80px;
   }
 }
 @media (min-width: 1280px) {
-  .testimonials {
+  .page-testimonials {
     text-align: left;
   }
-  .testimonials .list {
+  .page-testimonials .list {
     margin-top: 40px;
   }
-  .testimonials .list .entry {
+  .page-testimonials .list .entry {
     margin-bottom: 66px;
   }
-  .testimonials .list .entry:last-of-type {
+  .page-testimonials .list .entry:last-of-type {
     margin-bottom: 54px;
   }
-  .testimonials .list .entry .comment {
+  .page-testimonials .list .entry .comment {
     padding: 28px 36px 34px;
   }
-  .testimonials .list .entry .comment:before {
+  .page-testimonials .list .entry .comment:before {
     right: 180px;
   }
 }
@@ -1886,7 +1886,6 @@ input[type="submit"].button-yellow:focus:before {
    _FEATURES
    ========================================================================== */
 .features {
-  margin-bottom: 36px;
   padding: 32px 0;
   background-color: #7d4d42;
   background: -webkit-linear-gradient(left, #7d4d42, #a05f50, #7a4c40);
@@ -1896,6 +1895,7 @@ input[type="submit"].button-yellow:focus:before {
   background: linear-gradient(to right, #7d4d42, #a05f50, #7a4c40);
   color: #fff;
   position: relative;
+  z-index: 10;
 }
 .features:after {
   display: block;
@@ -2003,5 +2003,137 @@ input[type="submit"].button-yellow:focus:before {
   .features .list li .icon {
     width: 134px;
     height: 134px;
+  }
+}
+/* ==========================================================================
+   _ABOUT
+   ========================================================================== */
+/* ==========================================================================
+   _TESTIMONIALS
+   ========================================================================== */
+.testimonials {
+  margin: 0 -10px;
+  padding: 8px 10px 48px;
+  background: #f3b04c;
+  color: #fff;
+}
+.testimonials .heading {
+  margin-bottom: 16px;
+}
+.testimonials .list {
+  margin-bottom: 60px;
+}
+.testimonials .list .entry {
+  margin-bottom: 46px;
+}
+.testimonials .list .entry:last-of-type {
+  margin-bottom: 0;
+}
+.testimonials .list .entry .name {
+  margin: 0 0 10px;
+  color: #86564a;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+}
+.testimonials .list .entry .comment {
+  padding: 16px 20px 16px;
+  font-size: 14px;
+  line-height: 19px;
+  background: #fff;
+  color: #444;
+  position: relative;
+  font-weight: normal;
+}
+.testimonials .list .entry .comment:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 40px 34px 0;
+  border-color: transparent #fff transparent transparent;
+  position: absolute;
+  top: 100%;
+  right: 46px;
+}
+.testimonials .list .entry .comment p:last-of-type {
+  margin-bottom: 0;
+}
+.testimonials .buttons {
+  text-align: center;
+}
+.testimonials .buttons .button {
+  width: 45%;
+  margin: 0 3px;
+  padding: 9px;
+  font-size: 15px;
+}
+@media (min-width: 768px) {
+  .testimonials {
+    padding-top: 22px;
+    padding-bottom: 68px;
+  }
+  .testimonials .heading {
+    margin-bottom: 26px;
+  }
+  .testimonials .list {
+    margin-bottom: 36px;
+  }
+  .testimonials .list .entry .name {
+    margin-bottom: 15px;
+  }
+  .testimonials .list .entry .comment {
+    padding: 22px 16px;
+  }
+  .testimonials .list .entry .comment:before {
+    right: 65px;
+  }
+  .testimonials .buttons .button {
+    width: auto;
+    margin: 0 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media (min-width: 1280px) {
+  .testimonials {
+    margin: 0 0 0 45px;
+    padding-top: 52px;
+    padding-left: 42px;
+    padding-right: 42px;
+    padding-bottom: 80px;
+  }
+  .testimonials .heading {
+    margin-bottom: 34px;
+    line-height: 32px;
+  }
+  .testimonials .heading span {
+    font-size: 30px;
+  }
+  .testimonials .list {
+    margin-bottom: 75px;
+  }
+  .testimonials .list .entry {
+    margin-bottom: 52px;
+  }
+  .testimonials .list .entry .name {
+    margin-bottom: 12px;
+  }
+  .testimonials .list .entry .comment {
+    padding: 18px 22px;
+  }
+  .testimonials .list .entry .comment:before {
+    right: 48px;
+  }
+  .testimonials .buttons {
+    margin: 0 -20px;
+  }
+  .testimonials .buttons .button {
+    width: 45%;
+    margin: 0 3px;
+    padding: 10px;
+    font-size: 14px;
   }
 }
