@@ -51,7 +51,8 @@ module.exports = function (grunt) {
 							src.vendor + 'jquery/dist/jquery.min.js',
 							src.vendor + 'fastclick/lib/fastclick.js',
 							src.vendor + 'magnific-popup/dist/jquery.magnific-popup.min.js',
-							src.vendor + 'slick-carousel/slick/slick.min.js'
+							src.vendor + 'slick-carousel/slick/slick.min.js',
+							src.vendor + 'perfect-scrollbar/js/perfect-scrollbar.jquery.min.js'
 						],
 						dest: src.js + 'vendor'
 					}, {
@@ -66,7 +67,8 @@ module.exports = function (grunt) {
 						flatten: true,
 						src: [
 							src.vendor + 'magnific-popup/dist/magnific-popup.css',
-							src.vendor + 'slick-carousel/slick/slick.css'
+							src.vendor + 'slick-carousel/slick/slick.css',
+							src.vendor + 'perfect-scrollbar/css/perfect-scrollbar.min.css'
 						],
 						dest: src.css + 'temp'
 					}, {
@@ -115,7 +117,8 @@ module.exports = function (grunt) {
 							src.js + 'custom.js',
 							src.js + 'vendor/fastclick.min.js',
 							src.js + 'vendor/jquery.magnific-popup.min.js',
-							src.js + 'vendor/slick.min.js'
+							src.js + 'vendor/slick.min.js',
+							src.js + 'vendor/perfect-scrollbar.jquery.min.js'
 						],
 						dest: src.js + 'plugins.js'
 					}, {

@@ -91,7 +91,9 @@ $(document).ready(function () {
 				dots: true,
 				focusOnSelect: true
 			});
-
+		});
+		$('.info', this).each(function () {
+			$('.text', this).perfectScrollbar();
 		});
 	});
 

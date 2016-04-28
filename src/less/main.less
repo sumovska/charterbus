@@ -2082,8 +2082,28 @@ textarea {
       height: 304px;
       line-height: 24px;
       overflow-y: scroll;
+      position: relative;
       p {
         margin-bottom: 12px;
+        &:last-of-type { margin-bottom: 0;}
+      }
+      &.ps-container {
+        padding-right: 30px;
+        >.ps-scrollbar-y-rail {
+          width: 1px;
+          background: @color-font;
+          border-radius: 0;
+          opacity: 1;
+          right: 14px;
+          >.ps-scrollbar-y {
+            width: 18px;
+            height: 18px !important;
+            background: @color-white;
+            border-radius: 50%;
+            box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.19);
+            right: -9px;
+          }
+        }
       }
     }
   }
