@@ -180,6 +180,7 @@ audio, canvas, img, video { vertical-align: middle; }
   margin: 0;
   line-height: normal;
   font-weight: 300;
+  text-align: center;
 }
 .h1 {
   &:extend(.h-default);
@@ -217,6 +218,10 @@ audio, canvas, img, video { vertical-align: middle; }
   font-size: 18px;
   font-style: normal;
 }
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  &.h-brown { color: @color-brown; }
+  &.h-normal { font-weight: normal; }
+}
 h1 {&:extend(.h1); }
 h2 {&:extend(.h2); }
 h3 {&:extend(.h3); }
@@ -232,6 +237,9 @@ h6 {&:extend(.h6); }
   .h6 { font-size: 25px; }
 }
 @media @xl {
+  .h-default {
+    text-align: left;
+  }
   .h1 { font-size: 56px; margin: @margin-lg 0 @margin-lg; }
   .h2 { font-size: 49px; margin: @margin-lg 0 @margin-lg; }
   .h3 { font-size: 40px; margin: @margin-lg 0 @margin-lg; }
@@ -490,7 +498,6 @@ textarea {
   position: relative;
   z-index: 100;
   cursor: default;
-
   &:before {
     .before;
     height: 34px;
@@ -933,6 +940,9 @@ textarea {
     .wrapper {
       padding-left: 32px;
       padding-right: 32px;
+    }
+    .heading {
+      text-align: left;
     }
     .contacts {
       width: 63%;
@@ -1517,7 +1527,6 @@ textarea {
    _CATALOG
    ========================================================================== */
 .catalog {
-  .heading { text-align: center; }
   .list {
     margin: 0 -10px;
     .item {
@@ -1613,7 +1622,6 @@ textarea {
   @media @xl {
     margin-bottom: 80px;
     padding-top: 0;
-    .heading { text-align: left; }
     .list {
       margin: 40px -3px 25px;
       &:after { .clearfix; }
@@ -1656,13 +1664,27 @@ textarea {
    _FEATURES
    ========================================================================== */
 .features {
+  margin-bottom: 36px;
   padding: 32px 0;
   .gradient-x3(@color-chocolate-shade1, @color-chocolate, @color-chocolate-shade2);
   color: @color-white;
+  position: relative;
+  &:after {
+    .before;
+    clear: both;
+    height: 20px;
+    background: url("@{images}/shadow.jpg") 50% 0 no-repeat;
+    background-size: auto 100%;
+    opacity: .98;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+  }
   .heading {
     margin-top: 0;
     margin-bottom: 26px;
-    text-align: center;
   }
   .list {
     margin: 0;
@@ -1695,6 +1717,9 @@ textarea {
   }
   @media @md {
     padding: 47px 0;
+    &:after {
+      height: 26px;
+    }
     .list {
       margin-left: -15px;
       margin-right: -15px;
@@ -1715,8 +1740,8 @@ textarea {
   }
   @media @xl {
     padding: 60px 0 40px;
-    .heading {
-      text-align: left;
+    &:after {
+      height: 30px;
     }
     .list {
       margin-top: 40px;
@@ -1737,10 +1762,5 @@ textarea {
         }
       }
     }
-  }
-}
-.about {
-  .heading {
-    color: @color-brown;
   }
 }
