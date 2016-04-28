@@ -50,7 +50,8 @@ module.exports = function (grunt) {
 							src.vendor + 'html5shiv/dist/html5shiv.min.js',
 							src.vendor + 'jquery/dist/jquery.min.js',
 							src.vendor + 'fastclick/lib/fastclick.js',
-							src.vendor + 'magnific-popup/dist/jquery.magnific-popup.min.js'
+							src.vendor + 'magnific-popup/dist/jquery.magnific-popup.min.js',
+							src.vendor + 'slick-carousel/slick/slick.min.js'
 						],
 						dest: src.js + 'vendor'
 					}, {
@@ -64,7 +65,8 @@ module.exports = function (grunt) {
 						expand: true,
 						flatten: true,
 						src: [
-							src.vendor + 'magnific-popup/dist/magnific-popup.css'
+							src.vendor + 'magnific-popup/dist/magnific-popup.css',
+							src.vendor + 'slick-carousel/slick/slick.css'
 						],
 						dest: src.css + 'temp'
 					}, {
@@ -112,7 +114,8 @@ module.exports = function (grunt) {
 						src: [
 							src.js + 'custom.js',
 							src.js + 'vendor/fastclick.min.js',
-							src.js + 'vendor/jquery.magnific-popup.min.js'
+							src.js + 'vendor/jquery.magnific-popup.min.js',
+							src.js + 'vendor/slick.min.js'
 						],
 						dest: src.js + 'plugins.js'
 					}, {

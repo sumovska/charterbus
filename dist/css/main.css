@@ -1799,6 +1799,9 @@ input[type="submit"].button-yellow:focus:before {
   display: inline-block;
   color: #fff;
 }
+.catalog .list .item .info .price {
+  white-space: nowrap;
+}
 .catalog .list .item .bottom {
   text-align: center;
 }
@@ -2211,4 +2214,109 @@ input[type="submit"].button-yellow:focus:before {
     padding-right: 10px;
     font-size: 14px;
   }
+}
+/* ==========================================================================
+   _BLOCK-ITEM
+   ========================================================================== */
+.block-item .picture {
+  margin-bottom: 25px;
+}
+.block-item .picture .slider-for {
+  height: 225px;
+  margin: 0 0 1px 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.block-item .picture .slider-for:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.block-item .picture .slider-for.slick-iitialized {
+  height: auto;
+  overflow: visible;
+}
+.block-item .picture .slider-for li img {
+  width: 100%;
+  height: auto;
+}
+.block-item .picture .slider-nav {
+  height: 75px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.block-item .picture .slider-nav:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.block-item .picture .slider-nav.slick-iitialized {
+  height: auto;
+  overflow: visible;
+}
+.block-item .picture .slider-nav li {
+  width: 33.3%;
+  padding: 0 1px 0 0;
+  float: left;
+}
+.block-item .picture .slider-nav li img {
+  width: 100%;
+  height: auto;
+}
+.block-item .info {
+  margin: 0 -10px;
+  padding: 27px 10px;
+  background: #ededed;
+}
+.block-item .info .title {
+  margin-top: 0;
+  font-size: 25px;
+  line-height: normal;
+  color: #86564a;
+  font-weight: normal;
+}
+.block-item .info .list {
+  margin: 0 0 26px 0;
+  font-size: 18px;
+  text-align: center;
+}
+.block-item .info .list dt {
+  display: inline;
+}
+.block-item .info .list dt:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 7px;
+}
+.block-item .info .list dt:first-of-type:before {
+  height: 0;
+}
+.block-item .info .list dt .icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.block-item .info .list dd {
+  margin: 0;
+  font-weight: bold;
+  display: inline;
+}
+.block-item .info .list .number {
+  width: 38px;
+  height: 38px;
+  margin: 0 0 0 6px;
+  padding: 7px;
+  background: #f3c14d;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+}
+.block-item .info .list .price {
+  white-space: nowrap;
 }
