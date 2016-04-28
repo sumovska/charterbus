@@ -1934,8 +1934,14 @@ input[type="submit"].button-yellow:focus:before {
     padding-bottom: 18px;
     font-size: 18px;
   }
+  .catalog.catalog-similar {
+    margin-bottom: 0;
+  }
   .catalog.catalog-similar .list .item:nth-of-type(n+3) {
     display: block;
+  }
+  .catalog.catalog-similar .list .item:nth-last-of-type(-n+3) {
+    margin-bottom: 0;
   }
 }
 /* ==========================================================================
@@ -2398,6 +2404,7 @@ input[type="submit"].button-yellow:focus:before {
 }
 @media (min-width: 1280px) {
   .block-item {
+    margin-bottom: 60px;
     background: #ededed;
   }
   .block-item .picture {
@@ -2421,7 +2428,7 @@ input[type="submit"].button-yellow:focus:before {
     font-size: 16px;
   }
   .block-item .info .text {
-    height: auto;
+    height: 234px;
     font-size: 16px;
   }
   .block-item .info .button-order {
