@@ -1650,6 +1650,15 @@ textarea {
       }
     }
     .more { display: inline-block; }
+    &.catalog-similar {
+      padding-bottom: 0;
+      .list {
+        .item {
+          &:nth-of-type(n+5) { display: block; }
+          &:nth-of-type(n+3) { display: none; }
+        }
+      }
+    }
   }
   @media @xl {
     margin-bottom: 80px;
@@ -1693,6 +1702,13 @@ textarea {
       padding-top: 18px;
       padding-bottom: 18px;
       font-size: 18px;
+    }
+    &.catalog-similar {
+      .list {
+        .item {
+          &:nth-of-type(n+3) { display: block; }
+        }
+      }
     }
   }
 }
@@ -1960,15 +1976,16 @@ textarea {
    ========================================================================== */
 .block-item {
   .picture {
-    margin-bottom: 25px;
+    max-width: 620px;
+    margin: 0 auto 25px;
     .slider-for {
       height: 225px;
       margin: 0 0 1px 0;
       padding: 0;
       list-style: none;
       overflow: hidden;
-      &:after { .clearfix; }
-      &.slick-iitialized {
+      &:after {.clearfix;}
+      &.slick-initialized {
         height: auto;
         overflow: visible;
       }
@@ -1986,8 +2003,8 @@ textarea {
       padding: 0;
       list-style: none;
       overflow: hidden;
-      &:after { .clearfix; }
-      &.slick-iitialized {
+      &:after {.clearfix;}
+      &.slick-initialized {
         height: auto;
         overflow: visible;
       }
@@ -2003,15 +2020,22 @@ textarea {
     }
   }
   .info {
-    margin: 0 -10px;
+    margin: 0 -10px 26px;
     padding: 27px 10px;
     background: @color-gray-light;
+    .area {
+      max-width: 620px;
+      margin: 0 auto;
+    }
     .title {
       margin-top: 0;
       font-size: 25px;
       line-height: normal;
       color: @color-brown;
       font-weight: normal;
+    }
+    .h {
+      font-weight: 600;
     }
     .list {
       margin: 0 0 26px 0;
@@ -2046,7 +2070,88 @@ textarea {
         display: inline-block;
         color: @color-white;
       }
-      .price { white-space: nowrap; }
+      .price {white-space: nowrap;}
+    }
+    .button-order {
+      margin-bottom: 34px;
+      font-size: 18px;
+    }
+    .text {
+      height: 304px;
+      line-height: 24px;
+      overflow-y: scroll;
+      p {
+        margin-bottom: 12px;
+      }
+    }
+  }
+  @media @md {
+    .picture {
+      margin-bottom: 42px;
+    }
+    .info {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 40px 0;
+      .title {
+        text-align: left;
+        font-size: 30px;
+      }
+      .h {
+        margin-bottom: 14px;
+      }
+      .list {
+        max-width: 320px;
+        margin-bottom: 0;
+       text-align: left;
+        dt {
+          .icon {
+            margin-right: 6px;
+          }
+        }
+      }
+      .button-order {
+        margin: 0 0 -10px 0;
+        padding: 15px 30px;
+        font-size: 18px;
+        position: relative;
+        top: -58px;
+        right: -106px;
+      }
+      .text {
+        height: 218px;
+      }
+    }
+  }
+  @media @xl {
+    background: @color-gray-light;
+    .picture {
+      width: 53%;
+      margin: 0;
+      float: left;
+    }
+    .info {
+      width: 43%;
+      margin-bottom: 0;
+      padding-top: 45px;
+      padding-bottom: 0;
+      float: right;
+      background: transparent;
+      .title {
+        margin-bottom: 18px;
+      }
+      .h {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .text {
+        height: auto;
+        font-size: 16px;
+      }
+      .button-order {
+        margin-bottom: 0;
+        right: -162px;
+      }
     }
   }
 }
