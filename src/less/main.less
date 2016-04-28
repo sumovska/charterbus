@@ -1611,6 +1611,7 @@ textarea {
     }
   }
   @media @xl {
+    margin-bottom: 80px;
     padding-top: 0;
     .heading { text-align: left; }
     .list {
@@ -1664,10 +1665,11 @@ textarea {
     text-align: center;
   }
   .list {
+    margin: 0;
     padding: 0;
     list-style: none;
     line-height: 20px;
-    &:after {.clearfix;}
+    &:after { .clearfix; }
     li {
       margin-bottom: 28px;
       padding-left: 88px;
@@ -1698,7 +1700,7 @@ textarea {
       margin-right: -15px;
       li {
         width: 50%;
-        margin-bottom: 26px;
+        margin-bottom: 16px;
         padding-right: 15px;
         padding-left: 103px;
         float: left;
@@ -1707,6 +1709,28 @@ textarea {
         }
         .icon {
           left: 15px;
+        }
+      }
+    }
+  }
+  @media @xl {
+    padding: 60px 0;
+    .heading {
+      text-align: left;
+    }
+    .list {
+      margin-top: 40px;
+      line-height: 24px;
+      li {
+        margin-bottom: 64px;
+        padding-left: 160px;
+        .h {
+          margin-bottom: 16px;
+          font-size: 30px;
+        }
+        .icon {
+          width: 134px;
+          height: 134px;
         }
       }
     }

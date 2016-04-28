@@ -1792,6 +1792,7 @@ input[type="submit"].button-yellow:focus:before {
 }
 @media (min-width: 1280px) {
   .catalog {
+    margin-bottom: 80px;
     padding-top: 0;
   }
   .catalog .heading {
@@ -1871,6 +1872,7 @@ input[type="submit"].button-yellow:focus:before {
   text-align: center;
 }
 .features .list {
+  margin: 0;
   padding: 0;
   list-style: none;
   line-height: 20px;
@@ -1914,7 +1916,7 @@ input[type="submit"].button-yellow:focus:before {
   }
   .features .list li {
     width: 50%;
-    margin-bottom: 26px;
+    margin-bottom: 16px;
     padding-right: 15px;
     padding-left: 103px;
     float: left;
@@ -1924,5 +1926,29 @@ input[type="submit"].button-yellow:focus:before {
   }
   .features .list li .icon {
     left: 15px;
+  }
+}
+@media (min-width: 1280px) {
+  .features {
+    padding: 60px 0;
+  }
+  .features .heading {
+    text-align: left;
+  }
+  .features .list {
+    margin-top: 40px;
+    line-height: 24px;
+  }
+  .features .list li {
+    margin-bottom: 64px;
+    padding-left: 160px;
+  }
+  .features .list li .h {
+    margin-bottom: 16px;
+    font-size: 30px;
+  }
+  .features .list li .icon {
+    width: 134px;
+    height: 134px;
   }
 }
