@@ -1852,3 +1852,77 @@ input[type="submit"].button-yellow:focus:before {
     display: inline-block;
   }
 }
+/* ==========================================================================
+   _FEATURES
+   ========================================================================== */
+.features {
+  padding: 32px 0;
+  background-color: #7d4d42;
+  background: -webkit-linear-gradient(left, #7d4d42, #a05f50, #7a4c40);
+  background: -moz-linear-gradient(left, #7d4d42, #a05f50, #7a4c40);
+  background: -ms-linear-gradient(left, #7d4d42, #a05f50, #7a4c40);
+  background: -o-linear-gradient(left, #7d4d42, #a05f50, #7a4c40);
+  background: linear-gradient(to right, #7d4d42, #a05f50, #7a4c40);
+  color: #fff;
+}
+.features .heading {
+  margin-top: 0;
+  margin-bottom: 26px;
+  text-align: center;
+}
+.features .list {
+  padding: 0;
+  list-style: none;
+  line-height: 20px;
+}
+.features .list:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.features .list li {
+  margin-bottom: 28px;
+  padding-left: 88px;
+  position: relative;
+}
+.features .list li:last-of-type {
+  margin-bottom: 0;
+}
+.features .list li p:last-of-type {
+  margin-bottom: 0;
+}
+.features .list li .icon {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.features .list li .h {
+  margin-bottom: 6px;
+  color: #eda940;
+  font-size: 21px;
+  line-height: normal;
+}
+@media (min-width: 768px) {
+  .features {
+    padding: 47px 0;
+  }
+  .features .list {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .features .list li {
+    width: 50%;
+    margin-bottom: 26px;
+    padding-right: 15px;
+    padding-left: 103px;
+    float: left;
+  }
+  .features .list li .h {
+    font-size: 22px;
+  }
+  .features .list li .icon {
+    left: 15px;
+  }
+}
