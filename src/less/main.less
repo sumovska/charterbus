@@ -253,6 +253,10 @@ h6 {&:extend(.h6); }
 .clearfix { display: table; content: '\0020'; clear: both; }
 .before { display: block; content: '\0020'; overflow: hidden; }
 .hidden { display: none; }
+.mobile-hidden {
+  display: none;
+  @media @xl {  display: block;  }
+}
 .text-center { text-align: center; }
 figure {
   margin: 0;
@@ -273,8 +277,11 @@ figure {
 }
 .main {
   padding: 13px 0;
+  .body-index & {
+    padding-bottom: 0;
+  }
   @media @xl {
-    padding: 32px 0;
+    padding: 35px 0;
   }
 }
 /* PureCSS styles */
@@ -322,7 +329,7 @@ textarea {
 /* BUTTONS */
 .button, button, input[type="submit"] {
   height: auto;
-  padding: 14px 24px;
+  padding: 16px 24px;
   font: 600 16px/18px @font-family;
   display: inline-block;
   color: @color-white;
@@ -402,6 +409,9 @@ textarea {
   }
 }
 @media @md {
+  .button, button, input[type="submit"] {
+    padding: 18px 30px;
+  }
   .form-line {
     &.form-line-2-col {
       margin-left: -4px;
@@ -418,7 +428,6 @@ textarea {
 @media @xl {
   .button, button, input[type="submit"] {
     font-size: 18px;
-    padding: 18px 30px;
   }
 }
 /* ==========================================================================
@@ -622,8 +631,7 @@ textarea {
   }
   .button-order {
     margin-bottom: 21px;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding: 18px 30px;
   }
   .tel {
     font-size: 30px;
@@ -831,6 +839,9 @@ textarea {
   position: relative;
   z-index: 1;
   cursor: default;
+  .body-index & {
+    margin-top: 0;
+  }
   &:after {
     .before;
     clear: both;
@@ -933,6 +944,9 @@ textarea {
       }
     }
   }
+  .button-order {
+    padding: 18px 30px;
+  }
   @media @md {
     padding-top: 24px;
     text-align: left;
@@ -974,11 +988,6 @@ textarea {
           margin: 0 10px 0 0;
         }
       }
-      .button {
-        position: absolute;
-        top: 58px;
-        right: 42px;
-      }
     }
     .links {
       width: 37%;
@@ -987,13 +996,18 @@ textarea {
         margin-bottom: 6px;
       }
     }
+    .button-order {
+      position: absolute;
+      bottom: 103px;
+      right: 75px;
+    }
   }
   @media @xl {
     padding-top: 38px;
     &:before {
       .before;
       background: url('@{images}/roads/information.png') 0 100% no-repeat;
-      background-size: 100% 100%;
+      background-size: 1558px 382px;
       position: absolute;
       left: 0;
       right: 0;
@@ -1038,13 +1052,10 @@ textarea {
         margin-right: -9px;
         li { margin: 0 9px; }
       }
-      .button {
-        margin-top: 96px;
-        margin-left: -44px;
-        position: relative;
-        top: auto;
-        right: auto;
-      }
+    }
+    .button-order {
+      bottom: 16px;
+      right: 148px;
     }
   }
 }
@@ -1091,13 +1102,14 @@ textarea {
     }
   }
   @media @md {
+    text-align: left;
     .list {
       margin-top: 36px;
-      text-align: left;
       .entry {
         margin-bottom: 58px;
         .name {
           margin-bottom: 20px;
+          text-align: left;
         }
         .comment {
           padding: 24px;
@@ -1276,7 +1288,13 @@ textarea {
     input, textarea {
       border: none;
     }
-    .form-submit { margin-top: 26px; }
+    .form-submit {
+      margin-top: 26px;
+      .button {
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+    }
   }
   @media @xxs {
     .list { padding: 0 20px; }
@@ -1465,7 +1483,7 @@ textarea {
     &:before {
       .before;
       background: url('@{images}/roads/index.png') 0 50% no-repeat;
-      background-size: 100% 100%;
+      background-size: 1874px 579px;
       position: absolute;
       left: 0;
       right: 0;
@@ -1600,9 +1618,15 @@ textarea {
       }
     }
   }
-  .more { display: none; }
+  .more {
+    display: none;
+    font-size: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
   @media @md {
     padding-top: 16px;
+    padding-bottom: 48px;
     .list {
       margin: 0 -1px 18px;
       &:after { .clearfix; }
@@ -1618,10 +1642,11 @@ textarea {
         .name { text-align: left; }
       }
     }
+    .more { display: inline-block; }
   }
   @media @xl {
     margin-bottom: 80px;
-    padding-top: 0;
+    padding: 0;
     .list {
       margin: 40px -3px 25px;
       &:after { .clearfix; }
@@ -1657,14 +1682,18 @@ textarea {
         }
       }
     }
-    .more { display: inline-block; }
+    .more {
+      padding-top: 18px;
+      padding-bottom: 18px;
+      font-size: 18px;
+    }
   }
 }
 /* ==========================================================================
    _FEATURES
    ========================================================================== */
 .features {
-  padding: 32px 0;
+  padding: 32px 0 54px;
   .gradient-x3(@color-chocolate-shade1, @color-chocolate, @color-chocolate-shade2);
   color: @color-white;
   position: relative;
@@ -1740,6 +1769,17 @@ textarea {
   }
   @media @xl {
     padding: 60px 0 40px;
+    &:before {
+      .before;
+      background: url('@{images}/roads/features.png') 0 0 no-repeat;
+      background-size: 1638px 568px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+    }
     &:after {
       height: 30px;
     }
@@ -1768,7 +1808,13 @@ textarea {
    _ABOUT
    ========================================================================== */
 .about {
-
+  padding: 14px 0;
+  @media @md {
+    padding: 28px 0;
+  }
+@media @xl {
+  padding: 34px 0;
+}
 }
 /* ==========================================================================
    _TESTIMONIALS
@@ -1794,23 +1840,34 @@ textarea {
         text-align: left;
       }
       .comment {
-        padding: 16px 20px 16px;
+        padding: 16px 20px 12px;
         font-size: 14px;
         line-height: 19px;
         background: @color-white;
         color: @color-font;
         position: relative;
         font-weight: normal;
-        &:before {
+        border-bottom: 4px solid @color-gold;
+        &:before, &:after {
           .before;
+          clear: both;
           width: 0;
           height: 0;
           border-style: solid;
-          border-width: 0 40px 34px 0;
-          border-color: transparent @color-white transparent transparent;
           position: absolute;
           top: 100%;
           right: 46px;
+        }
+        &:before {
+          border-width: 0 42px 38px 0;
+          border-color: transparent @color-gold transparent transparent;
+          right: 47px;
+          z-index: 1;
+        }
+        &:after {
+          border-width: 0 37px 34px 0;
+          border-color: transparent @color-white transparent transparent;
+          z-index: 2;
         }
         p {
           &:last-of-type { margin-bottom: 0; }
@@ -1823,7 +1880,7 @@ textarea {
     .button {
       width: 45%;
       margin: 0 3px;
-      padding: 9px;
+      padding: 10px;
       font-size: 15px;
     }
   }
@@ -1842,6 +1899,7 @@ textarea {
         .comment {
           padding: 22px 16px;
           &:before { right: 65px; }
+          &:after { right: 64px; }
         }
       }
     }
@@ -1856,10 +1914,7 @@ textarea {
   }
   @media @xl {
     margin: 0 0 0 45px;
-    padding-top: 52px;
-    padding-left: 42px;
-    padding-right: 42px;
-    padding-bottom: 80px;
+    padding: 50px 42px 60px;
     .heading {
       margin-bottom: 34px;
       line-height: 32px;
@@ -1877,6 +1932,7 @@ textarea {
         .comment {
           padding: 18px 22px;
           &:before { right: 48px; }
+          &:after { right: 47px; }
         }
       }
     }
@@ -1885,7 +1941,8 @@ textarea {
       .button {
         width: 45%;
         margin: 0 3px;
-        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
         font-size: 14px;
       }
     }

@@ -220,6 +220,14 @@ h6 {
 .hidden {
   display: none;
 }
+.mobile-hidden {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .mobile-hidden {
+    display: block;
+  }
+}
 .text-center {
   text-align: center;
 }
@@ -251,9 +259,12 @@ figure img {
 .main {
   padding: 13px 0;
 }
+.body-index .main {
+  padding-bottom: 0;
+}
 @media (min-width: 1280px) {
   .main {
-    padding: 32px 0;
+    padding: 35px 0;
   }
 }
 /* PureCSS styles */
@@ -315,7 +326,7 @@ textarea {
 button,
 input[type="submit"] {
   height: auto;
-  padding: 14px 24px;
+  padding: 16px 24px;
   font: 600 16px/18px 'Open Sans', Arial, sans-serif;
   display: inline-block;
   color: #fff;
@@ -434,6 +445,11 @@ input[type="submit"].button-yellow:focus:before {
   margin-bottom: 0;
 }
 @media (min-width: 768px) {
+  .button,
+  button,
+  input[type="submit"] {
+    padding: 18px 30px;
+  }
   .form-line.form-line-2-col {
     margin-left: -4px;
     margin-right: -4px;
@@ -450,7 +466,6 @@ input[type="submit"].button-yellow:focus:before {
   button,
   input[type="submit"] {
     font-size: 18px;
-    padding: 18px 30px;
   }
 }
 /* ==========================================================================
@@ -697,8 +712,7 @@ input[type="submit"].button-yellow:focus:before {
 }
 .header .button-order {
   margin-bottom: 21px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding: 18px 30px;
 }
 .header .tel {
   font-size: 30px;
@@ -919,6 +933,9 @@ input[type="submit"].button-yellow:focus:before {
   z-index: 1;
   cursor: default;
 }
+.body-index .information {
+  margin-top: 0;
+}
 .information:after {
   display: block;
   content: '\0020';
@@ -1031,6 +1048,9 @@ input[type="submit"].button-yellow:focus:before {
   width: auto;
   height: 64px;
 }
+.information .button-order {
+  padding: 18px 30px;
+}
 @media (min-width: 768px) {
   .information {
     padding-top: 24px;
@@ -1073,17 +1093,17 @@ input[type="submit"].button-yellow:focus:before {
   .information .payment ul li {
     margin: 0 10px 0 0;
   }
-  .information .payment .button {
-    position: absolute;
-    top: 58px;
-    right: 42px;
-  }
   .information .links {
     width: 37%;
     float: right;
   }
   .information .links .heading {
     margin-bottom: 6px;
+  }
+  .information .button-order {
+    position: absolute;
+    bottom: 103px;
+    right: 75px;
   }
 }
 @media (min-width: 1280px) {
@@ -1095,7 +1115,7 @@ input[type="submit"].button-yellow:focus:before {
     content: '\0020';
     overflow: hidden;
     background: url('../img/roads/information.png') 0 100% no-repeat;
-    background-size: 100% 100%;
+    background-size: 1558px 382px;
     position: absolute;
     left: 0;
     right: 0;
@@ -1149,12 +1169,9 @@ input[type="submit"].button-yellow:focus:before {
   .information .payment ul li {
     margin: 0 9px;
   }
-  .information .payment .button {
-    margin-top: 96px;
-    margin-left: -44px;
-    position: relative;
-    top: auto;
-    right: auto;
+  .information .button-order {
+    bottom: 16px;
+    right: 148px;
   }
 }
 /* ==========================================================================
@@ -1203,15 +1220,18 @@ input[type="submit"].button-yellow:focus:before {
   margin-bottom: 0;
 }
 @media (min-width: 768px) {
+  .page-testimonials {
+    text-align: left;
+  }
   .page-testimonials .list {
     margin-top: 36px;
-    text-align: left;
   }
   .page-testimonials .list .entry {
     margin-bottom: 58px;
   }
   .page-testimonials .list .entry .name {
     margin-bottom: 20px;
+    text-align: left;
   }
   .page-testimonials .list .entry .comment {
     padding: 24px;
@@ -1419,6 +1439,10 @@ input[type="submit"].button-yellow:focus:before {
 }
 .contact-us .form-ask .form-submit {
   margin-top: 26px;
+}
+.contact-us .form-ask .form-submit .button {
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 @media (min-width: 375px) {
   .contact-us .list {
@@ -1645,7 +1669,7 @@ input[type="submit"].button-yellow:focus:before {
     content: '\0020';
     overflow: hidden;
     background: url('../img/roads/index.png') 0 50% no-repeat;
-    background-size: 100% 100%;
+    background-size: 1874px 579px;
     position: absolute;
     left: 0;
     right: 0;
@@ -1787,10 +1811,14 @@ input[type="submit"].button-yellow:focus:before {
 }
 .catalog .more {
   display: none;
+  font-size: 15px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 @media (min-width: 768px) {
   .catalog {
     padding-top: 16px;
+    padding-bottom: 48px;
   }
   .catalog .list {
     margin: 0 -1px 18px;
@@ -1821,11 +1849,14 @@ input[type="submit"].button-yellow:focus:before {
   .catalog .list .item .name {
     text-align: left;
   }
+  .catalog .more {
+    display: inline-block;
+  }
 }
 @media (min-width: 1280px) {
   .catalog {
     margin-bottom: 80px;
-    padding-top: 0;
+    padding: 0;
   }
   .catalog .list {
     margin: 40px -3px 25px;
@@ -1879,14 +1910,16 @@ input[type="submit"].button-yellow:focus:before {
     padding-bottom: 10px;
   }
   .catalog .more {
-    display: inline-block;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 18px;
   }
 }
 /* ==========================================================================
    _FEATURES
    ========================================================================== */
 .features {
-  padding: 32px 0;
+  padding: 32px 0 54px;
   background-color: #7d4d42;
   background: -webkit-linear-gradient(left, #7d4d42, #a05f50, #7a4c40);
   background: -moz-linear-gradient(left, #7d4d42, #a05f50, #7a4c40);
@@ -1980,6 +2013,19 @@ input[type="submit"].button-yellow:focus:before {
   .features {
     padding: 60px 0 40px;
   }
+  .features:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    background: url('../img/roads/features.png') 0 0 no-repeat;
+    background-size: 1638px 568px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+  }
   .features:after {
     height: 30px;
   }
@@ -2008,6 +2054,19 @@ input[type="submit"].button-yellow:focus:before {
 /* ==========================================================================
    _ABOUT
    ========================================================================== */
+.about {
+  padding: 14px 0;
+}
+@media (min-width: 768px) {
+  .about {
+    padding: 28px 0;
+  }
+}
+@media (min-width: 1280px) {
+  .about {
+    padding: 34px 0;
+  }
+}
 /* ==========================================================================
    _TESTIMONIALS
    ========================================================================== */
@@ -2037,26 +2096,38 @@ input[type="submit"].button-yellow:focus:before {
   text-align: left;
 }
 .testimonials .list .entry .comment {
-  padding: 16px 20px 16px;
+  padding: 16px 20px 12px;
   font-size: 14px;
   line-height: 19px;
   background: #fff;
   color: #444;
   position: relative;
   font-weight: normal;
+  border-bottom: 4px solid #bd8532;
 }
-.testimonials .list .entry .comment:before {
+.testimonials .list .entry .comment:before,
+.testimonials .list .entry .comment:after {
   display: block;
   content: '\0020';
   overflow: hidden;
+  clear: both;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 40px 34px 0;
-  border-color: transparent #fff transparent transparent;
   position: absolute;
   top: 100%;
   right: 46px;
+}
+.testimonials .list .entry .comment:before {
+  border-width: 0 42px 38px 0;
+  border-color: transparent #bd8532 transparent transparent;
+  right: 47px;
+  z-index: 1;
+}
+.testimonials .list .entry .comment:after {
+  border-width: 0 37px 34px 0;
+  border-color: transparent #fff transparent transparent;
+  z-index: 2;
 }
 .testimonials .list .entry .comment p:last-of-type {
   margin-bottom: 0;
@@ -2067,7 +2138,7 @@ input[type="submit"].button-yellow:focus:before {
 .testimonials .buttons .button {
   width: 45%;
   margin: 0 3px;
-  padding: 9px;
+  padding: 10px;
   font-size: 15px;
 }
 @media (min-width: 768px) {
@@ -2090,6 +2161,9 @@ input[type="submit"].button-yellow:focus:before {
   .testimonials .list .entry .comment:before {
     right: 65px;
   }
+  .testimonials .list .entry .comment:after {
+    right: 64px;
+  }
   .testimonials .buttons .button {
     width: auto;
     margin: 0 10px;
@@ -2100,10 +2174,7 @@ input[type="submit"].button-yellow:focus:before {
 @media (min-width: 1280px) {
   .testimonials {
     margin: 0 0 0 45px;
-    padding-top: 52px;
-    padding-left: 42px;
-    padding-right: 42px;
-    padding-bottom: 80px;
+    padding: 50px 42px 60px;
   }
   .testimonials .heading {
     margin-bottom: 34px;
@@ -2127,13 +2198,17 @@ input[type="submit"].button-yellow:focus:before {
   .testimonials .list .entry .comment:before {
     right: 48px;
   }
+  .testimonials .list .entry .comment:after {
+    right: 47px;
+  }
   .testimonials .buttons {
     margin: 0 -20px;
   }
   .testimonials .buttons .button {
     width: 45%;
     margin: 0 3px;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 14px;
   }
 }
