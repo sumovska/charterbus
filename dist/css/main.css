@@ -917,9 +917,9 @@ input[type="submit"].button-yellow:focus:before {
   }
 }
 /* ==========================================================================
-   _INFORMATION
+   _FOOTER
    ========================================================================== */
-.information {
+.footer {
   margin-top: 48px;
   padding: 10px 0 40px;
   text-align: center;
@@ -933,10 +933,10 @@ input[type="submit"].button-yellow:focus:before {
   z-index: 1;
   cursor: default;
 }
-.body-index .information {
+.body-index .footer {
   margin-top: 0;
 }
-.information:after {
+.footer:after {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -957,56 +957,56 @@ input[type="submit"].button-yellow:focus:before {
   transform: rotate(-180deg);
   -webkit-backface-visibility: hidden;
 }
-.information .contacts {
+.footer .contacts {
   margin-bottom: 5px;
 }
-.information .contacts .heading {
+.footer .contacts .heading {
   margin-bottom: 18px;
 }
-.information .contacts .line {
+.footer .contacts .line {
   margin-bottom: 14px;
   font-size: 18px;
 }
-.information .contacts .line .fa {
+.footer .contacts .line .fa {
   margin: 0 2px 0 0;
   font-size: 26px;
   color: #d7d7d7;
 }
-.information .contacts .line .mail {
+.footer .contacts .line .mail {
   color: #444;
 }
-.information .contacts .line .tel {
+.footer .contacts .line .tel {
   color: #444;
   cursor: default;
 }
-.information .contacts .line .tel:hover,
-.information .contacts .line .tel:focus {
+.footer .contacts .line .tel:hover,
+.footer .contacts .line .tel:focus {
   text-decoration: none;
 }
-.information .contacts .company-logo {
+.footer .contacts .company-logo {
   width: 249px;
   height: 43px;
   margin: 45px auto 7px;
 }
-.information .contacts .company-logo img {
+.footer .contacts .company-logo img {
   width: 100%;
   height: auto;
   display: block;
 }
-.information .contacts .slogan {
+.footer .contacts .slogan {
   margin: 0;
   font-size: 13px;
   text-transform: uppercase;
   font-weight: normal;
 }
-.information .links {
+.footer .links {
   margin-bottom: 5px;
   display: inline-block;
 }
-.information .links .heading {
+.footer .links .heading {
   margin-bottom: 18px;
 }
-.information .links ul {
+.footer .links ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1014,13 +1014,13 @@ input[type="submit"].button-yellow:focus:before {
   font-size: 14px;
   line-height: normal;
 }
-.information .links ul li {
+.footer .links ul li {
   margin-bottom: 2px;
   padding-left: 18px;
   color: #444;
   position: relative;
 }
-.information .links ul li:before {
+.footer .links ul li:before {
   display: block;
   content: '\0020';
   overflow: hidden;
@@ -1031,90 +1031,90 @@ input[type="submit"].button-yellow:focus:before {
   left: 2px;
   top: 7px;
 }
-.information .links ul li a {
+.footer .links ul li a {
   color: #444;
 }
-.information .payment ul {
+.footer .payment ul {
   margin: 0 0 34px;
   padding: 0;
   list-style: none;
 }
-.information .payment ul li {
+.footer .payment ul li {
   margin: 0 12px;
   display: inline-block;
   vertical-align: middle;
 }
-.information .payment ul li img {
+.footer .payment ul li img {
   width: auto;
   height: 64px;
 }
-.information .button-order {
+.footer .button-order {
   padding: 18px 30px;
 }
 @media (min-width: 768px) {
-  .information {
+  .footer {
     padding-top: 24px;
     text-align: left;
   }
-  .information:after {
+  .footer:after {
     height: 26px;
   }
-  .information .wrapper {
+  .footer .wrapper {
     padding-left: 32px;
     padding-right: 32px;
   }
-  .information .heading {
+  .footer .heading {
     text-align: left;
   }
-  .information .contacts {
+  .footer .contacts {
     width: 63%;
     margin-bottom: 42px;
     float: left;
   }
-  .information .contacts .heading {
+  .footer .contacts .heading {
     margin-bottom: 21px;
   }
-  .information .contacts .line .fa {
+  .footer .contacts .line .fa {
     width: 24px;
     font-size: 24px;
   }
-  .information .contacts .company-logo {
+  .footer .contacts .company-logo {
     margin: 62px 0 7px;
   }
-  .information .payment {
+  .footer .payment {
     width: 100%;
     padding-right: 300px;
     clear: both;
     position: relative;
   }
-  .information .payment .heading {
+  .footer .payment .heading {
     margin-bottom: 25px;
   }
-  .information .payment ul li {
+  .footer .payment ul li {
     margin: 0 10px 0 0;
   }
-  .information .links {
+  .footer .links {
     width: 37%;
     float: right;
   }
-  .information .links .heading {
+  .footer .links .heading {
     margin-bottom: 6px;
   }
-  .information .button-order {
+  .footer .button-order {
     position: absolute;
     bottom: 103px;
     right: 75px;
   }
 }
 @media (min-width: 1280px) {
-  .information {
+  .footer {
     padding-top: 38px;
   }
-  .information:before {
+  .footer:before {
     display: block;
     content: '\0020';
     overflow: hidden;
-    background: url('../img/roads/information.png') 0 100% no-repeat;
+    background: url('../img/roads/footer.png') 0 100% no-repeat;
     background-size: 1558px 382px;
     position: absolute;
     left: 0;
@@ -1123,53 +1123,53 @@ input[type="submit"].button-yellow:focus:before {
     top: 0;
     z-index: -1;
   }
-  .information:after {
+  .footer:after {
     height: 30px;
   }
-  .information .wrapper {
+  .footer .wrapper {
     padding-left: 15px;
     padding-right: 15px;
     position: relative;
     z-index: 2;
   }
-  .information .contacts {
+  .footer .contacts {
     width: 38%;
   }
-  .information .contacts .heading {
+  .footer .contacts .heading {
     margin-bottom: 26px;
   }
-  .information .contacts .line {
+  .footer .contacts .line {
     margin-bottom: 11px;
     padding-left: 5px;
   }
-  .information .contacts .company-logo {
+  .footer .contacts .company-logo {
     margin: 53px 0 3px;
   }
-  .information .links {
+  .footer .links {
     width: 29%;
     float: left;
   }
-  .information .links .heading {
+  .footer .links .heading {
     margin-bottom: 10px;
   }
-  .information .payment {
+  .footer .payment {
     width: 33%;
     padding-right: 0;
     padding-left: 62px;
     float: left;
     clear: none;
   }
-  .information .payment .heading {
+  .footer .payment .heading {
     margin-bottom: 35px;
   }
-  .information .payment ul {
+  .footer .payment ul {
     margin-left: -9px;
     margin-right: -9px;
   }
-  .information .payment ul li {
+  .footer .payment ul li {
     margin: 0 9px;
   }
-  .information .button-order {
+  .footer .button-order {
     bottom: 16px;
     right: 148px;
   }
