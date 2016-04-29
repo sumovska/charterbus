@@ -1046,25 +1046,21 @@ input[type="submit"].button-yellow:focus:before {
 .footer .links ul li a {
   color: #444;
 }
-.footer .payment ul {
-  margin: 0 0 34px;
-  padding: 0;
-  list-style: none;
+.footer .payment .heading {
+  margin-bottom: 12px;
 }
-.footer .payment ul li {
-  margin: 0 12px;
-  display: inline-block;
-  vertical-align: middle;
-}
-.footer .payment ul li img {
-  width: auto;
-  height: 64px;
+.footer .payment img {
+  width: 311px;
+  height: 67px;
+  margin: 0 auto 42px;
+  display: block;
 }
 .footer .button-order {
   padding: 18px 30px;
 }
 @media (min-width: 768px) {
   .footer {
+    padding-bottom: 60px;
     padding-top: 24px;
     text-align: left;
   }
@@ -1101,10 +1097,10 @@ input[type="submit"].button-yellow:focus:before {
     position: relative;
   }
   .footer .payment .heading {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
   }
-  .footer .payment ul li {
-    margin: 0 10px 0 0;
+  .footer .payment img {
+    margin: 0;
   }
   .footer .links {
     width: 37%;
@@ -1115,8 +1111,8 @@ input[type="submit"].button-yellow:focus:before {
   }
   .footer .button-order {
     position: absolute;
-    bottom: 103px;
-    right: 75px;
+    bottom: 85px;
+    right: 85px;
   }
 }
 @media (min-width: 1280px) {
@@ -1180,14 +1176,7 @@ input[type="submit"].button-yellow:focus:before {
     clear: none;
   }
   .footer .payment .heading {
-    margin-bottom: 35px;
-  }
-  .footer .payment ul {
-    margin-left: -9px;
-    margin-right: -9px;
-  }
-  .footer .payment ul li {
-    margin: 0 9px;
+    margin-bottom: 28px;
   }
   .footer .button-order {
     bottom: 17px;

@@ -943,25 +943,21 @@ textarea {
     }
   }
   .payment {
-    ul {
-      margin: 0 0 34px;
-      padding: 0;
-      list-style: none;
-      li {
-        margin: 0 12px;
-        display: inline-block;
-        vertical-align: middle;
-        img {
-          width: auto;
-          height: 64px;
-        }
-      }
+    .heading {
+      margin-bottom: 12px;
+    }
+    img {
+      width: 311px;
+      height: 67px;
+      margin: 0 auto 42px;
+      display: block;
     }
   }
   .button-order {
     padding: 18px 30px;
   }
   @media @md {
+    padding-bottom: 60px;
     padding-top: 24px;
     text-align: left;
     &:after { height: 26px; }
@@ -995,14 +991,8 @@ textarea {
       padding-right: 300px;
       clear: both;
       position: relative;
-      .heading {
-        margin-bottom: 25px;
-      }
-      ul {
-        li {
-          margin: 0 10px 0 0;
-        }
-      }
+      .heading { margin-bottom: 18px; }
+      img { margin: 0; }
     }
     .links {
       width: 37%;
@@ -1013,8 +1003,8 @@ textarea {
     }
     .button-order {
       position: absolute;
-      bottom: 103px;
-      right: 75px;
+      bottom: 85px;
+      right: 85px;
     }
   }
   @media @xl {
@@ -1064,12 +1054,7 @@ textarea {
       padding-left: 62px;
       float: left;
       clear: none;
-      .heading { margin-bottom: 35px; }
-      ul {
-        margin-left: -9px;
-        margin-right: -9px;
-        li { margin: 0 9px; }
-      }
+      .heading { margin-bottom: 28px; }
     }
     .button-order {
       bottom: 17px;
