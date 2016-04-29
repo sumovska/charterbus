@@ -684,7 +684,7 @@ input[type="submit"].button-yellow:focus:before {
 }
 .header .city .dropdown {
   width: 172px;
-  padding: 14px 18px;
+  padding: 14px 8px 14px 18px;
   display: none;
   position: absolute;
   top: 100%;
@@ -701,7 +701,7 @@ input[type="submit"].button-yellow:focus:before {
   overflow-y: auto;
 }
 .header .city .dropdown .list {
-  padding: 0;
+  padding: 0 20px 0 0;
   margin: 0;
   list-style: none;
   font-size: 12px;
@@ -2361,6 +2361,7 @@ input[type="submit"].button-yellow:focus:before {
 }
 .block-item .info .text {
   height: 304px;
+  padding-right: 30px;
   line-height: 24px;
   overflow-y: scroll;
   position: relative;
@@ -2370,24 +2371,6 @@ input[type="submit"].button-yellow:focus:before {
 }
 .block-item .info .text p:last-of-type {
   margin-bottom: 0;
-}
-.block-item .info .text.ps-container {
-  padding-right: 30px;
-}
-.block-item .info .text.ps-container > .ps-scrollbar-y-rail {
-  width: 1px;
-  background: #444;
-  border-radius: 0;
-  opacity: 1;
-  right: 14px;
-}
-.block-item .info .text.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
-  width: 18px;
-  height: 18px !important;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.19);
-  right: -9px;
 }
 @media (min-width: 768px) {
   .block-item .picture {
@@ -2458,4 +2441,33 @@ input[type="submit"].button-yellow:focus:before {
     margin-bottom: 0;
     right: -162px;
   }
+}
+/* ==========================================================================
+   _SCROLLBAR
+   ========================================================================== */
+.ps-container > .ps-scrollbar-y-rail {
+  width: 19px !important;
+  right: 0 !important;
+  opacity: 1 !important;
+}
+.ps-container > .ps-scrollbar-y-rail:before {
+  width: 1px;
+  display: block;
+  content: '';
+  overflow: hidden;
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  bottom: 9px;
+  z-index: 1;
+  background: #444;
+}
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  right: 1px;
+  background: #fff;
+  box-shadow: 1px 1px 1px -1px #000;
+  z-index: 5;
 }
