@@ -824,7 +824,6 @@ input[type="submit"].button-yellow:focus:before {
 }
 @media (min-width: 1280px) {
   .header {
-    height: 248px;
     height: 165px;
     margin-bottom: 83px;
   }
