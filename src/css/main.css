@@ -1693,6 +1693,12 @@ input[type="submit"].button-yellow:focus:before {
 .index {
   position: relative;
   z-index: 80;
+  background-color: #eda73e;
+  background: -webkit-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -moz-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -ms-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -o-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: linear-gradient(to right, #eda73e, #f3c14d, #f0ad47);
 }
 .index .wrapper {
   padding-top: 34px;
@@ -1805,6 +1811,9 @@ input[type="submit"].button-yellow:focus:before {
   }
 }
 @media (min-width: 1280px) {
+  .index {
+    background: none;
+  }
   .index .wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -2174,19 +2183,20 @@ input[type="submit"].button-yellow:focus:before {
 @media (min-width: 1280px) {
   .features {
     padding: 60px 0 40px;
+    overflow: hidden;
   }
   .features:before {
     display: block;
     content: '\0020';
     overflow: hidden;
-    background: url('../img/roads/features.png') 0 0 no-repeat;
-    background-size: 1638px 568px;
+    width: 1638px;
+    height: 568px;
+    margin-left: -980px;
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     top: 0;
+    left: 50%;
     z-index: -1;
+    background: url('../img/roads/features.png') 0 0 no-repeat;
   }
   .features:after {
     height: 30px;
@@ -2197,7 +2207,7 @@ input[type="submit"].button-yellow:focus:before {
   }
   .features .list li {
     width: 52%;
-    margin-bottom: 58px;
+    margin-bottom: 48px;
     padding-left: 160px;
     padding-right: 30px;
   }
@@ -2742,6 +2752,7 @@ input[type="submit"].button-yellow:focus:before {
   top: 10px;
   overflow: hidden;
   text-indent: -1000px;
+  cursor: pointer;
 }
 .mfp-close:before,
 .mfp-close:after {

@@ -1513,6 +1513,7 @@ textarea {
 .index {
   position: relative;
   z-index: 80;
+  .gradient-x3(@color-mustard-shade1, @color-mustard, @color-mustard-shade2);
   .wrapper {
     padding-top: 34px;
     padding-bottom: 50px;
@@ -1612,6 +1613,7 @@ textarea {
     }
   }
   @media @xl {
+    background: none;
     .wrapper {
       padding-top: 20px;
       padding-bottom: 20px;
@@ -1922,26 +1924,25 @@ textarea {
   }
   @media @xl {
     padding: 60px 0 40px;
+    overflow: hidden;
     &:before {
       .before;
-      background: url('@{images}/roads/features.png') 0 0 no-repeat;
-      background-size: 1638px 568px;
+      width: 1638px;
+      height: 568px;
+      margin-left: -980px;
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
       top: 0;
+      left: 50%;
       z-index: -1;
+      background: url('@{images}/roads/features.png') 0 0 no-repeat;
     }
-    &:after {
-      height: 30px;
-    }
+    &:after { height: 30px; }
     .list {
       margin-top: 40px;
       line-height: 24px;
       li {
         width: 52%;
-        margin-bottom: 58px;
+        margin-bottom: 48px;
         padding-left: 160px;
         padding-right: 30px;
         &:nth-child(even) { width: 48%; }
@@ -2434,6 +2435,7 @@ textarea {
   top: 10px;
   overflow: hidden;
   text-indent: -1000px;
+  cursor: pointer;
 
   &:before, &:after {
     .before;
