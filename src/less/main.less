@@ -1525,6 +1525,7 @@ textarea {
       color: @color-brown;
       &:last-child { margin-bottom: 0; }
       a {
+        display: block;
         color: @color-brown;
         &:hover { text-decoration: none; }
       }
@@ -1657,8 +1658,10 @@ textarea {
         }
         &:nth-child(even) {
           margin-top: 108px;
-          padding-bottom: 164px;
-          position: relative;
+          a {
+            padding-bottom: 164px;
+            position: relative;
+          }
           .image {
             margin: 0;
             position: absolute;

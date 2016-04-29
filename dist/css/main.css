@@ -1713,6 +1713,7 @@ input[type="submit"].button-yellow:focus:before {
   margin-bottom: 0;
 }
 .index .buses-list li a {
+  display: block;
   color: #86564a;
 }
 .index .buses-list li a:hover {
@@ -1864,6 +1865,8 @@ input[type="submit"].button-yellow:focus:before {
   }
   .index .buses-list li:nth-child(even) {
     margin-top: 108px;
+  }
+  .index .buses-list li:nth-child(even) a {
     padding-bottom: 164px;
     position: relative;
   }
