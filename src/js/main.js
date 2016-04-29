@@ -66,6 +66,19 @@ $(document).ready(function () {
 		});
 	});
 
+	/** Catalog */
+	$('.catalog').each(function () {
+		var _this = $(this);
+		$('.more', this).on('click', function () {
+			_this.addClass('catalog-pre');
+			setTimeout(function () {
+				_this.addClass('catalog-all');
+			}, 20);
+			$(this).hide();
+			return false;
+		})
+	});
+
 	/** Google Map */
 	$('.map').each(function () {
 		var _map = $(this);

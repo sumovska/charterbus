@@ -1943,7 +1943,9 @@ input[type="submit"].button-yellow:focus:before {
   font-size: 15px;
 }
 .catalog .more {
-  display: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
   font-size: 15px;
   padding-top: 9px;
   padding-bottom: 9px;
@@ -1982,9 +1984,6 @@ input[type="submit"].button-yellow:focus:before {
   .catalog .list .item .name {
     text-align: left;
   }
-  .catalog .more {
-    display: inline-block;
-  }
   .catalog.catalog-similar {
     padding-bottom: 0;
   }
@@ -2015,6 +2014,9 @@ input[type="submit"].button-yellow:focus:before {
   }
   .catalog .list .item:nth-of-type(n+5) {
     display: block;
+  }
+  .catalog .list .item:nth-of-type(n+7) {
+    display: none;
   }
   .catalog .list .item:nth-of-type(even) {
     margin-left: 0;
@@ -2054,6 +2056,7 @@ input[type="submit"].button-yellow:focus:before {
   .catalog .more {
     padding-top: 18px;
     padding-bottom: 18px;
+    margin: 0;
     font-size: 18px;
   }
   .catalog.catalog-similar {
@@ -2065,6 +2068,14 @@ input[type="submit"].button-yellow:focus:before {
   .catalog.catalog-similar .list .item:nth-last-of-type(-n+3) {
     margin-bottom: 0;
   }
+}
+.catalog.catalog-pre .list .item:nth-of-type(n+7) {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.catalog.catalog-all .list .item:nth-of-type(n+7) {
+  opacity: 1;
 }
 /* ==========================================================================
    _FEATURES

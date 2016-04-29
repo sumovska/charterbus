@@ -1745,7 +1745,9 @@ textarea {
     }
   }
   .more {
-    display: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
     font-size: 15px;
     padding-top: 9px;
     padding-bottom: 9px;
@@ -1768,7 +1770,6 @@ textarea {
         .name { text-align: left; }
       }
     }
-    .more { display: inline-block; }
     &.catalog-similar {
       padding-bottom: 0;
       .list {
@@ -1790,6 +1791,7 @@ textarea {
         margin-bottom: 6px;
         padding: 0 3px;
         &:nth-of-type(n+5) { display: block; }
+        &:nth-of-type(n+7) { display: none; }
         &:nth-of-type(even) { margin-left: 0; }
         &:nth-of-type(2n+1) { clear: none; }
         &:nth-of-type(3n+1) { clear: left; }
@@ -1820,6 +1822,7 @@ textarea {
     .more {
       padding-top: 18px;
       padding-bottom: 18px;
+      margin: 0;
       font-size: 18px;
     }
     &.catalog-similar {
@@ -1831,6 +1834,12 @@ textarea {
         }
       }
     }
+  }
+  &.catalog-pre {
+    .list .item:nth-of-type(n+7) { display: block; opacity: 0; transition: opacity @duration; }
+  }
+  &.catalog-all {
+    .list .item:nth-of-type(n+7) { opacity: 1; }
   }
 }
 /* ==========================================================================
