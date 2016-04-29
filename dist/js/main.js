@@ -12,6 +12,11 @@ $(document).ready(function () {
 	/*** Forms ***/
 	initForms();
 
+	/*** Ajax Popup ***/
+	$('.js-ajax').magnificPopup({
+		type: 'ajax'
+	});
+
 	/*** Header ***/
 	$('.header').each(function () {
 		$(this).append('<span class="toggle"></span>');
@@ -137,7 +142,7 @@ $.extend(true, $.magnificPopup.defaults, {
 	closeMarkup: '<span title="%title%" class="mfp-close"><span class="mfp-in"></span></span>',
 	ajax: {tError: '<a href="%url%">Контент</a> не найден.'},
 	settings: {cache: false},
-	mainClass: 'mfp-zoom-in',
+	mainClass: 'mfp-fade',
 	midClick: true,
 	removalDelay: 300,
 	autoFocusLast: false,
