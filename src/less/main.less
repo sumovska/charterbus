@@ -2149,6 +2149,52 @@ textarea {
       &.slick-initialized {
         height: auto;
         overflow: visible;
+        .slick-slide { outline: none !important; }
+        .slick-list { position: relative; z-index: 1; }
+        .slick-arrow {
+          width: 40px;
+          height: 50%;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          z-index: 50;
+          cursor: pointer;
+
+          &:before, &:after {
+            width: 20px;
+            height: 4px;
+            border-radius: 2px;
+            margin: auto;
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: @color-white;
+            transition: background @duration;
+          }
+          &:before { .rotate(45deg); }
+          &:after { .rotate(-45deg); }
+          &:hover, &:focus {
+            &:before, &:after {
+              background: @color-mustard;
+            }
+          }
+          &.slick-prev {
+            left: 0; right: auto;
+            &:before { bottom: -12px; left: -1px; }
+            &:after { top: -12px; left: -1px; }
+          }
+          &.slick-next {
+            right: 0; left: auto;
+            &:before { top: -12px; right: -1px; }
+            &:after { bottom: -12px; right: -1px; }
+          }
+        }
       }
       li {
         width: 33.3%;

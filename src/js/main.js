@@ -143,8 +143,10 @@ $(document).ready(function () {
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				asNavFor: '.slider-for',
-				dots: true,
-				focusOnSelect: true
+				dots: false,
+				focusOnSelect: true,
+				prevArrow: '<span class="slick-prev"></span>',
+				nextArrow: '<span class="slick-next"></span>'
 			});
 		});
 		$('.info', this).each(function () {
