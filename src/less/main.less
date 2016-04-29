@@ -1404,10 +1404,10 @@ textarea {
     }
     .form-ask {
       &.form-skew {
-          .form-area {
-            position: relative;
-            right: 24px;
-          }
+        .form-area {
+          position: relative;
+          right: 24px;
+        }
       }
       .form-submit {
         margin-top: 0;
@@ -1495,7 +1495,6 @@ textarea {
    _INDEX
    ========================================================================== */
 .index {
-  padding: 34px 0 50px;
   .gradient-x3(@color-mustard-shade1, @color-mustard, @color-mustard-shade2);
   position: relative;
   z-index: 1;
@@ -1512,6 +1511,10 @@ textarea {
     top: 100%;
     z-index: -1;
   }
+  .wrapper {
+    padding-top: 34px;
+    padding-bottom: 50px;
+  }
   .buses-list {
     margin: 0;
     padding: 0;
@@ -1520,8 +1523,14 @@ textarea {
     li {
       margin-bottom: 34px;
       color: @color-brown;
-      &:nth-child(even) { color: @color-white; }
       &:last-child { margin-bottom: 0; }
+      a {
+        color: @color-brown;
+        &:hover { text-decoration: none; }
+      }
+      &:nth-child(even) {
+        a { color: @color-white; }
+      }
       .image {
         margin-bottom: 3px;
         img {
@@ -1551,9 +1560,10 @@ textarea {
     }
   }
   @media @md {
-    padding: 24px 0;
     &:after { height: 26px; }
     .wrapper {
+      padding-top: 24px;
+      padding-bottom: 24px;
       overflow: hidden;
     }
     .buses-list {
@@ -1566,6 +1576,24 @@ textarea {
         &:nth-child(5) { width: 39%; vertical-align: top; }
         .image {
           margin-bottom: 8px;
+          img {
+            transition: transform @duration;
+          }
+        }
+        a {
+          &:hover {
+            .image {
+              img { .scale(1.1); }
+            }
+          }
+        }
+        &.active {
+          a {
+            color: @color-red;
+          }
+          .image {
+            img { .scale(1.1); }
+          }
         }
         .name {
           margin-bottom: 12px;
@@ -1582,7 +1610,6 @@ textarea {
     }
   }
   @media @xl {
-    padding: 20px 0;
     &:before {
       .before;
       background: url('@{images}/roads/index.png') 0 50% no-repeat;
@@ -1595,6 +1622,10 @@ textarea {
       z-index: -1;
     }
     &:after { height: 30px; }
+    .wrapper {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     .buses-list {
       margin: 0;
       li {
@@ -2456,7 +2487,7 @@ textarea {
         }
         .form-line { margin-bottom: 18px; }
         textarea { height: 124px; }
-        .form-submit { margin-top: 0;}
+        .form-submit { margin-top: 0; }
       }
     }
   }
@@ -2480,19 +2511,19 @@ textarea {
     }
     &.popup-order {
       background-size: 234px 146px;
-        .form {
-          &.form-skew {
-            max-width: 400px;
-            left: -80px;
-          }
-          textarea { height: 150px; }
-          .form-submit {
-            .button {
-              width: 100%;
-              display: block;
-            }
+      .form {
+        &.form-skew {
+          max-width: 400px;
+          left: -80px;
+        }
+        textarea { height: 150px; }
+        .form-submit {
+          .button {
+            width: 100%;
+            display: block;
           }
         }
+      }
     }
   }
 }

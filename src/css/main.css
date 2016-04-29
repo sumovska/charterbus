@@ -1671,7 +1671,6 @@ input[type="submit"].button-yellow:focus:before {
    _INDEX
    ========================================================================== */
 .index {
-  padding: 34px 0 50px;
   background-color: #eda73e;
   background: -webkit-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
   background: -moz-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
@@ -1696,6 +1695,10 @@ input[type="submit"].button-yellow:focus:before {
   top: 100%;
   z-index: -1;
 }
+.index .wrapper {
+  padding-top: 34px;
+  padding-bottom: 50px;
+}
 .index .buses-list {
   margin: 0;
   padding: 0;
@@ -1706,11 +1709,17 @@ input[type="submit"].button-yellow:focus:before {
   margin-bottom: 34px;
   color: #86564a;
 }
-.index .buses-list li:nth-child(even) {
-  color: #fff;
-}
 .index .buses-list li:last-child {
   margin-bottom: 0;
+}
+.index .buses-list li a {
+  color: #86564a;
+}
+.index .buses-list li a:hover {
+  text-decoration: none;
+}
+.index .buses-list li:nth-child(even) a {
+  color: #fff;
 }
 .index .buses-list li .image {
   margin-bottom: 3px;
@@ -1739,13 +1748,12 @@ input[type="submit"].button-yellow:focus:before {
   font-weight: 600;
 }
 @media (min-width: 768px) {
-  .index {
-    padding: 24px 0;
-  }
   .index:after {
     height: 26px;
   }
   .index .wrapper {
+    padding-top: 24px;
+    padding-bottom: 24px;
     overflow: hidden;
   }
   .index .buses-list {
@@ -1767,6 +1775,26 @@ input[type="submit"].button-yellow:focus:before {
   .index .buses-list li .image {
     margin-bottom: 8px;
   }
+  .index .buses-list li .image img {
+    transition: transform 0.2s ease;
+  }
+  .index .buses-list li a:hover .image img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  .index .buses-list li.active a {
+    color: #f01f2b;
+  }
+  .index .buses-list li.active .image img {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
   .index .buses-list li .name {
     margin-bottom: 12px;
   }
@@ -1780,9 +1808,6 @@ input[type="submit"].button-yellow:focus:before {
   }
 }
 @media (min-width: 1280px) {
-  .index {
-    padding: 20px 0;
-  }
   .index:before {
     display: block;
     content: '\0020';
@@ -1798,6 +1823,10 @@ input[type="submit"].button-yellow:focus:before {
   }
   .index:after {
     height: 30px;
+  }
+  .index .wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .index .buses-list {
     margin: 0;
