@@ -14,12 +14,29 @@ $(document).ready(function () {
 
 	/*** Header ***/
 	$('.header').each(function () {
+		var _body = $('body');
 		$(this).append('<span class="toggle"></span>');
+		$('.toggle', this).each(function () {
+			function handler(e) {
+				if (!($(e.target).hasClass('nav') || ($(e.target).closest('.nav').length > 0))) {
+					_body.removeClass('nav-open');
+					_body.off('click touchstart', handler);
+				}
+			}
+			$(this).on('click', function () {
+				if (_body.hasClass('nav-open')) {
+					_body.off('click touchstart', handler).removeClass('nav-open');
+				} else {
+					_body.on('click touchstart', handler).addClass('nav-open');
+				}
+				return false;
+			});
+		});
 		$('.city', this).each(function () {
 			function handler(e) {
 				if (!($(e.target).hasClass('dropdown') || ($(e.target).closest('.dropdown').length > 0))) {
 					_this.removeClass('open');
-					$('body').off('click touchstart', handler);
+					_body.off('click touchstart', handler);
 				}
 			}
 
@@ -31,10 +48,10 @@ $(document).ready(function () {
 			});
 			_link.on('click', function (e) {
 				if (_this.hasClass('open')) {
-					$('body').off('click touchstart', handler);
+					_body.off('click touchstart', handler);
 					_this.removeClass('open');
 				} else {
-					$('body').on('click touchstart', handler);
+					_body.on('click touchstart', handler);
 					_this.addClass('open');
 					_scroll.perfectScrollbar('update');
 				}

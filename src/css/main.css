@@ -561,6 +561,7 @@ input[type="submit"].button-yellow:focus:before {
    _HEADER
    ========================================================================== */
 .header {
+  height: 438px;
   padding: 37px 0 60px;
   background-color: #eda73e;
   background: -webkit-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
@@ -574,33 +575,31 @@ input[type="submit"].button-yellow:focus:before {
   position: relative;
   z-index: 100;
   cursor: default;
-}
-.header:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  height: 34px;
-  background: #86564a;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-.header:after {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  clear: both;
-  height: 20px;
-  background: url("../img/shadow.jpg") 50% 0 no-repeat;
-  background-size: auto 100%;
-  opacity: .98;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: -1;
+  /*
+  &:before {
+    .before;
+    height: 34px;
+    background: @color-brown;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  &:after {
+    .before;
+    clear: both;
+    height: 20px;
+    background: url("@{images}/shadow.jpg") 50% 0 no-repeat;
+    background-size: auto 100%;
+    opacity: .98;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+  }
+  */
 }
 .body-index .header:after {
   display: none;
@@ -646,7 +645,7 @@ input[type="submit"].button-yellow:focus:before {
   font-weight: normal;
 }
 .header .city {
-  margin-bottom: 12px;
+  margin-bottom: 27px;
   font-size: 14px;
   font-weight: 600;
   position: relative;
@@ -688,7 +687,7 @@ input[type="submit"].button-yellow:focus:before {
   display: none;
   position: absolute;
   top: 100%;
-  left: 2px;
+  left: -75px;
   background: #ededed;
   box-shadow: 2px 2px 4px -2px #000;
   text-align: left;
@@ -754,9 +753,6 @@ input[type="submit"].button-yellow:focus:before {
   left: 10px;
   top: 10px;
 }
-.header .nav {
-  display: none;
-}
 @media (min-width: 768px) {
   .header {
     height: 258px;
@@ -807,6 +803,9 @@ input[type="submit"].button-yellow:focus:before {
     top: 24px;
     z-index: 100;
   }
+  .header .city .dropdown {
+    left: 2px;
+  }
   .header .clock {
     margin: 0;
     font-size: 16px;
@@ -822,6 +821,8 @@ input[type="submit"].button-yellow:focus:before {
 @media (min-width: 1280px) {
   .header {
     height: 248px;
+    height: 165px;
+    margin-bottom: 83px;
   }
   .header:before {
     right: 80%;
@@ -873,27 +874,96 @@ input[type="submit"].button-yellow:focus:before {
     top: 99px;
     right: 62px;
   }
-  .header .nav {
-    padding-right: 34px;
-    display: block;
-    font-size: 17px;
-    font-weight: normal;
-    position: absolute;
-    top: 119px;
-    left: 5px;
-    z-index: 1;
+}
+/* ==========================================================================
+   _NAV
+   ========================================================================== */
+.nav {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 438px;
+  right: 0;
+  z-index: 99;
+  color: #fff;
+}
+.nav-open .nav {
+  display: block;
+}
+.nav:before {
+  content: '\0020';
+  overflow: hidden;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: #86564a;
+  opacity: .87;
+}
+.nav ul {
+  padding: 10px 10px 18px;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  z-index: 5;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: .01em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.nav ul li a {
+  padding: 5px;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+}
+.nav ul li a:before {
+  height: 1px;
+  overflow: hidden;
+  display: block;
+  content: '';
+  position: absolute;
+  right: 5px;
+  bottom: 2px;
+  left: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  transition: opacity 0.2s ease;
+}
+.nav ul li a:hover,
+.nav ul li a:focus {
+  text-decoration: none;
+}
+.nav ul li a:hover:before,
+.nav ul li a:focus:before {
+  opacity: 0;
+}
+.nav ul li.active a {
+  color: #f3c14d;
+}
+@media (min-width: 768px) {
+  .nav {
+    top: 258px;
   }
-  .header .nav:before {
+}
+@media (min-width: 1280px) {
+  .nav {
+    height: 34px;
+    padding-right: 30px;
+    margin-left: -600px;
     display: block;
-    content: '\0020';
-    overflow: hidden;
+    position: absolute;
+    top: 165px;
+    left: 50%;
+    right: auto;
+  }
+  .nav:before {
     height: 34px;
     background: #86564a;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
     transform: skew(-22deg, 0deg);
     -webkit-transform: skew(-22deg, 0deg);
     -moz-transform: skew(-22deg, 0deg);
@@ -901,30 +971,35 @@ input[type="submit"].button-yellow:focus:before {
     -ms-transform: skew(-22deg, 0deg);
     transition: background-color 0.2s ease;
     z-index: -1;
+    opacity: 1;
   }
-  .header .nav ul {
-    margin: 0 -21px;
+  .nav ul {
+    height: 34px;
     padding: 0;
+    margin: 0 -16px;
     list-style: none;
     position: relative;
     z-index: 1;
   }
-  .header .nav ul li {
-    margin: 0 21px;
+  .nav ul li {
+    margin: 0 22px;
     display: inline-block;
     text-transform: uppercase;
   }
-  .header .nav ul li a {
-    padding: 4px 10px;
+  .nav ul li a {
+    padding: 6px 10px;
     display: block;
     color: #fff;
   }
-  .header .nav ul li a:hover,
-  .header .nav ul li a:focus {
+  .nav ul li a:before {
+    display: none;
+  }
+  .nav ul li a:hover,
+  .nav ul li a:focus {
     color: #f3c14d;
     text-decoration: none;
   }
-  .header .nav ul li.active a {
+  .nav ul li.active a {
     color: #f3c14d;
   }
 }

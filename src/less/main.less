@@ -500,6 +500,7 @@ textarea {
    _HEADER
    ========================================================================== */
 .header {
+  height: 438px;
   padding: 37px 0 60px;
   .gradient-x3(@color-mustard-shade1, @color-mustard, @color-mustard-shade2);
   .color-brown(.87);
@@ -509,6 +510,7 @@ textarea {
   position: relative;
   z-index: 100;
   cursor: default;
+  /*
   &:before {
     .before;
     height: 34px;
@@ -532,6 +534,7 @@ textarea {
     top: 100%;
     z-index: -1;
   }
+  */
   .body-index & {
     &:after { display: none; }
   }
@@ -573,7 +576,7 @@ textarea {
     font-weight: normal;
   }
   .city {
-    margin-bottom: 12px;
+    margin-bottom: 27px;
     font-size: 14px;
     font-weight: 600;
     position: relative;
@@ -609,7 +612,7 @@ textarea {
       display: none;
       position: absolute;
       top: 100%;
-      left: 2px;
+      left: -75px;
       background: @color-gray-light;
       box-shadow: 2px 2px 4px -2px @color-black;
       text-align: left;
@@ -669,9 +672,6 @@ textarea {
       top: 10px;
     }
   }
-  .nav {
-    display: none;
-  }
   @media @md {
     height: 258px;
     padding-top: 46px;
@@ -717,6 +717,7 @@ textarea {
       left: 307px;
       top: 24px;
       z-index: 100;
+      .dropdown { left: 2px; }
     }
     .clock {
       margin: 0;
@@ -732,6 +733,8 @@ textarea {
   }
   @media @xl {
     height: 248px;
+    height: 165px;
+    margin-bottom: 83px;
     &:before {
       right: 80%;
       top: 165px;
@@ -788,51 +791,123 @@ textarea {
       top: 99px;
       right: 62px;
     }
-    .nav {
-      padding-right: 34px;
-      display: block;
-      font-size: 17px;
-      font-weight: normal;
-      position: absolute;
-      top: 119px;
-      left: 5px;
-      z-index: 1;
-      &:before {
-        .before;
-        height: 34px;
-        background: @color-brown;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        .skew(-22deg, 0deg);
-        transition: background-color @duration;
-        z-index: -1;
-      }
-      ul {
-        margin: 0 -21px;
-        padding: 0;
-        list-style: none;
+  }
+}
+/* ==========================================================================
+   _NAV
+   ========================================================================== */
+.nav {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 438px;
+  right: 0;
+  z-index: 99;
+  color: @color-white;
+
+  .nav-open & {
+    display: block;
+  }
+
+  &:before {
+    .before;
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: @color-brown;
+    opacity: .87;
+  }
+
+  ul {
+    padding: 10px 10px 18px;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    z-index: 5;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: .01em;
+    text-align: center;
+    text-transform: uppercase;
+
+    li {
+      a {
+        padding: 5px;
+        color: @color-white;
+        display: inline-block;
         position: relative;
-        z-index: 1;
-        li {
-          margin: 0 21px;
-          display: inline-block;
-          text-transform: uppercase;
+        &:before {
+          height: 1px;
+          overflow: hidden;
+          display: block;
+          content: '';
+          position: absolute;
+          right: 5px;
+          bottom: 2px;
+          left: 5px;
+          .color-white(.25);
+          background: @color;
+          transition: opacity @duration;
+        }
+        &:hover, &:focus {
+          text-decoration: none;
+          &:before { opacity: 0; }
+        }
+      }
+      &.active {
+        a {
+          color: @color-mustard;
+        }
+      }
+    }
+  }
+
+  @media @md {
+    top: 258px;
+  }
+  @media @xl {
+    height: 34px;
+    padding-right: 30px;
+    margin-left: -600px;
+    display: block;
+    position: absolute;
+    top: 165px;
+    left: 50%;
+    right: auto;
+    &:before {
+      height: 34px;
+      background: @color-brown;
+      .skew(-22deg, 0deg);
+      transition: background-color @duration;
+      z-index: -1;
+      opacity: 1;
+    }
+    ul {
+      height: 34px;
+      padding: 0;
+      margin: 0 -16px;
+      list-style: none;
+      position: relative;
+      z-index: 1;
+      li {
+        margin: 0 22px;
+        display: inline-block;
+        text-transform: uppercase;
+        a {
+          padding: 6px 10px;
+          display: block;
+          color: @color-white;
+          &:before { display: none; }
+          &:hover, &:focus { color: @color-mustard; text-decoration: none; }
+        }
+        &.active {
           a {
-            padding: 4px 10px;
-            display: block;
-            color: @color-white;
-            &:hover, &:focus {
-              color: @color-mustard;
-              text-decoration: none;
-            }
-          }
-          &.active {
-            a {
-              color: @color-mustard;
-            }
+            color: @color-mustard;
           }
         }
       }
