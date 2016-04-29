@@ -633,7 +633,7 @@ input[type="submit"].button-yellow:focus:before {
   .body-index .bg:before {
     top: 165px;
   }
-  .bg div {
+  .body-index .bg div {
     height: 579px;
     background: url('../img/roads/index.png') 76% 0 no-repeat;
     background-size: auto 100%;
