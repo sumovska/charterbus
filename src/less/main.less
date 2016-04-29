@@ -1111,9 +1111,9 @@ textarea {
     }
   }
   @media @xl {
-    height: 450px;
-    padding-top: 38px;
-    padding-bottom: 30px;
+    min-height: 450px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     &:before {
       .before;
       width: 1558px;
@@ -1413,9 +1413,7 @@ textarea {
       padding: 0;
       font-size: 18px;
       dt {
-        .fa {
-          margin-bottom: 10px;
-        }
+        .fa { margin-bottom: 10px; }
       }
     }
     .form-ask {
@@ -1443,17 +1441,18 @@ textarea {
       padding: 43px 0;
     }
     .list {
+      padding-left: 56px;
       margin-top: 34px;
       dt, dd {
         min-height: 42px;
-        margin-bottom: 26px;
         padding: 5px;
-        display: block;
+        display: inline;
+        &:nth-of-type(1) { margin-top: 0; }
       }
       dt {
         padding-left: 56px;
-        float: left;
-        clear: left;
+        margin-left: -56px;
+        overflow: hidden;
         position: relative;
         &:before { display: none; }
         .fa {
@@ -1503,7 +1502,7 @@ textarea {
   }
   @media @xl {
     height: 540px;
-    margin-bottom: -80px;
+    margin-bottom: -85px;
     &:after { height: 30px; }
   }
 }

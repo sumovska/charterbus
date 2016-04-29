@@ -1235,9 +1235,9 @@ input[type="submit"].button-yellow:focus:before {
 }
 @media (min-width: 1280px) {
   .footer {
-    height: 450px;
-    padding-top: 38px;
-    padding-bottom: 30px;
+    min-height: 450px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   .footer:before {
     display: block;
@@ -1609,19 +1609,23 @@ input[type="submit"].button-yellow:focus:before {
     padding: 43px 0;
   }
   .contact-us .list {
+    padding-left: 56px;
     margin-top: 34px;
   }
   .contact-us .list dt,
   .contact-us .list dd {
     min-height: 42px;
-    margin-bottom: 26px;
     padding: 5px;
-    display: block;
+    display: inline;
+  }
+  .contact-us .list dt:nth-of-type(1),
+  .contact-us .list dd:nth-of-type(1) {
+    margin-top: 0;
   }
   .contact-us .list dt {
     padding-left: 56px;
-    float: left;
-    clear: left;
+    margin-left: -56px;
+    overflow: hidden;
     position: relative;
   }
   .contact-us .list dt:before {
@@ -1681,7 +1685,7 @@ input[type="submit"].button-yellow:focus:before {
 @media (min-width: 1280px) {
   .map {
     height: 540px;
-    margin-bottom: -80px;
+    margin-bottom: -85px;
   }
   .map:after {
     height: 30px;
