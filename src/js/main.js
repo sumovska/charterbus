@@ -28,6 +28,7 @@ $(document).ready(function () {
 					_body.off('click touchstart', handler);
 				}
 			}
+
 			$(this).on('click', function () {
 				if (_body.hasClass('nav-open')) {
 					_body.off('click touchstart', handler).removeClass('nav-open');
@@ -73,16 +74,19 @@ $(document).ready(function () {
 		window.mapInit = function () {
 			if (typeof google != 'undefined') {
 				var pos = new google.maps.LatLng(56.8302988, 60.608876);
-
 				var map = new google.maps.Map(_map[0], {
 					mapTypeId: google.maps.MapTypeId.ROADMAP,
 					center: pos,
-					zoom: 14,
+					zoom: 13,
 					scrollwheel: false,
 					disableDefaultUI: true,
 					backgroundColor: "#f7f1d9"
 				});
-
+				var pin = new google.maps.MarkerImage();
+				var marker = new google.maps.Marker({
+					position: pos,
+					map: map
+				});
 				google.maps.event.addDomListener(window, 'resize', function () {
 					mapCenter.call(map);
 				});

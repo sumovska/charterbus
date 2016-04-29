@@ -1476,6 +1476,11 @@ textarea {
     top: 0;
     z-index: 10;
   }
+
+  a[href^="https://maps.google.com/maps"] { display: none !important; }
+  .gm-style-cc { display: none !important; }
+  .gm-style div { overflow: visible !important; }
+
   @media @md {
     height: 400px;
     &:after { height: 26px; }

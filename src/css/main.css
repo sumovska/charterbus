@@ -1641,6 +1641,15 @@ input[type="submit"].button-yellow:focus:before {
   top: 0;
   z-index: 10;
 }
+.map a[href^="https://maps.google.com/maps"] {
+  display: none !important;
+}
+.map .gm-style-cc {
+  display: none !important;
+}
+.map .gm-style div {
+  overflow: visible !important;
+}
 @media (min-width: 768px) {
   .map {
     height: 400px;
