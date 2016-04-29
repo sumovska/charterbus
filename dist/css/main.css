@@ -487,8 +487,6 @@ input[type="submit"].button-yellow:focus:before {
     -moz-transform: skew(-22deg, 0deg);
     -o-transform: skew(-22deg, 0deg);
     -ms-transform: skew(-22deg, 0deg);
-    position: relative;
-    right: 24px;
   }
   .form-skew .form-area > * {
     transform: skew(22deg, 0deg);
@@ -557,8 +555,74 @@ input[type="submit"].button-yellow:focus:before {
     max-width: 500px;
     margin: 0;
   }
-  .form-skew .form-area {
-    right: 10px;
+}
+/* ==========================================================================
+   _BG
+   ========================================================================== */
+.bg {
+  height: 438px;
+  background-color: #eda73e;
+  background: -webkit-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -moz-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -ms-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: -o-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
+  background: linear-gradient(to right, #eda73e, #f3c14d, #f0ad47);
+  box-shadow: inset 0 7px 0 0 rgba(135, 87, 74, 0.87);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+.bg:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 34px;
+  background: #86564a;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.bg:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  clear: both;
+  height: 20px;
+  background: url("../img/shadow.jpg") 50% 0 no-repeat;
+  background-size: auto 100%;
+  opacity: .98;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+}
+.body-index .bg:after {
+  display: none;
+}
+@media (min-width: 768px) {
+  .bg {
+    height: 258px;
+  }
+  .bg:after {
+    height: 26px;
+  }
+}
+@media (min-width: 1280px) {
+  .bg {
+    height: 248px;
+  }
+  .bg:before {
+    right: 80%;
+    top: 165px;
+    bottom: auto;
+  }
+  .bg:after {
+    height: 30px;
   }
 }
 /* ==========================================================================
@@ -567,46 +631,11 @@ input[type="submit"].button-yellow:focus:before {
 .header {
   height: 438px;
   padding: 37px 0 60px;
-  background-color: #eda73e;
-  background: -webkit-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
-  background: -moz-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
-  background: -ms-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
-  background: -o-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
-  background: linear-gradient(to right, #eda73e, #f3c14d, #f0ad47);
-  box-shadow: inset 0 7px 0 0 rgba(135, 87, 74, 0.87);
   color: #fff;
   text-align: center;
   position: relative;
   z-index: 100;
   cursor: default;
-  /*
-  &:before {
-    .before;
-    height: 34px;
-    background: @color-brown;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-  &:after {
-    .before;
-    clear: both;
-    height: 20px;
-    background: url("@{images}/shadow.jpg") 50% 0 no-repeat;
-    background-size: auto 100%;
-    opacity: .98;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    z-index: -1;
-  }
-  */
-}
-.body-index .header:after {
-  display: none;
 }
 .header .toggle {
   width: 40px;
@@ -763,9 +792,6 @@ input[type="submit"].button-yellow:focus:before {
     padding-top: 46px;
     text-align: left;
   }
-  .header:after {
-    height: 26px;
-  }
   .header .toggle {
     margin-right: -319px;
   }
@@ -824,16 +850,9 @@ input[type="submit"].button-yellow:focus:before {
 }
 @media (min-width: 1280px) {
   .header {
+    /*height: 248px;*/
     height: 165px;
     margin-bottom: 83px;
-  }
-  .header:before {
-    right: 80%;
-    top: 165px;
-    bottom: auto;
-  }
-  .header:after {
-    height: 30px;
   }
   .header .toggle {
     display: none;
@@ -1129,7 +1148,8 @@ input[type="submit"].button-yellow:focus:before {
 }
 .footer .payment img {
   width: 311px;
-  height: 67px;
+  max-width: 100%;
+  height: auto;
   margin: 0 auto 42px;
   display: block;
 }
@@ -1546,6 +1566,10 @@ input[type="submit"].button-yellow:focus:before {
   .contact-us .list dt .fa {
     margin-bottom: 10px;
   }
+  .contact-us .form-ask.form-skew .form-area {
+    position: relative;
+    right: 24px;
+  }
   .contact-us .form-ask .form-submit {
     margin-top: 0;
   }
@@ -1591,6 +1615,9 @@ input[type="submit"].button-yellow:focus:before {
   }
   .contact-us .form-ask {
     padding-left: 105px;
+  }
+  .contact-us .form-ask.form-skew .form-area {
+    right: 10px;
   }
 }
 /* ==========================================================================
@@ -1891,8 +1918,7 @@ input[type="submit"].button-yellow:focus:before {
 .catalog .list .item .bottom .button {
   width: 45%;
   margin: 0 3px;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding: 9px;
   font-size: 15px;
 }
 .catalog .more {
@@ -2240,10 +2266,20 @@ input[type="submit"].button-yellow:focus:before {
   text-align: center;
 }
 .testimonials .buttons .button {
-  width: 45%;
-  margin: 0 3px;
+  margin: 0 10px 10px;
   padding: 10px;
   font-size: 15px;
+  display: block;
+}
+.testimonials .buttons .button:last-of-type {
+  margin-bottom: 0;
+}
+@media (min-width: 375px) {
+  .testimonials .buttons .button {
+    width: 45%;
+    margin: 0 3px;
+    display: inline-block;
+  }
 }
 @media (min-width: 768px) {
   .testimonials {
@@ -2707,7 +2743,7 @@ input[type="submit"].button-yellow:focus:before {
   .popup.popup-order .form.form-skew {
     max-width: 340px;
     position: relative;
-    left: -40px;
+    left: -70px;
   }
   .popup.popup-order .form .form-line {
     margin-bottom: 18px;
@@ -2740,7 +2776,7 @@ input[type="submit"].button-yellow:focus:before {
   }
   .popup.popup-order .form.form-skew {
     max-width: 400px;
-    left: -60px;
+    left: -80px;
   }
   .popup.popup-order .form textarea {
     height: 150px;

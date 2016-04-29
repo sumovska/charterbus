@@ -446,8 +446,6 @@ textarea {
   @media @md {
     .form-area {
       .skew(-22deg, 0deg);
-      position: relative;
-      right: 24px;
       > * {
         .skew(22deg, 0deg);
       }
@@ -497,24 +495,21 @@ textarea {
   @media @xl {
     max-width: 500px;
     margin: 0;
-    .form-area { right: 10px; }
   }
 }
 /* ==========================================================================
-   _HEADER
+   _BG
    ========================================================================== */
-.header {
+.bg {
   height: 438px;
-  padding: 37px 0 60px;
   .gradient-x3(@color-mustard-shade1, @color-mustard, @color-mustard-shade2);
   .color-brown(.87);
   box-shadow: inset 0 7px 0 0 @color;
-  color: @color-white;
-  text-align: center;
-  position: relative;
-  z-index: 100;
-  cursor: default;
-  /*
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
   &:before {
     .before;
     height: 34px;
@@ -538,10 +533,34 @@ textarea {
     top: 100%;
     z-index: -1;
   }
-  */
   .body-index & {
     &:after { display: none; }
   }
+  @media @md {
+    height: 258px;
+    &:after { height: 26px; }
+  }
+  @media @xl {
+    height: 248px;
+    &:before {
+      right: 80%;
+      top: 165px;
+      bottom: auto;
+    }
+    &:after { height: 30px; }
+  }
+}
+/* ==========================================================================
+   _HEADER
+   ========================================================================== */
+.header {
+  height: 438px;
+  padding: 37px 0 60px;
+  color: @color-white;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  cursor: default;
   .toggle {
     width: 40px;
     height: 20px;
@@ -680,7 +699,6 @@ textarea {
     height: 258px;
     padding-top: 46px;
     text-align: left;
-    &:after { height: 26px; }
     .toggle {
       margin-right: -319px;
     }
@@ -736,16 +754,9 @@ textarea {
     }
   }
   @media @xl {
+    /*height: 248px;*/
     height: 165px;
     margin-bottom: 83px;
-    &:before {
-      right: 80%;
-      top: 165px;
-      bottom: auto;
-    }
-    &:after {
-      height: 30px;
-    }
     .toggle { display: none; }
     .slogan {
       top: 47px;
@@ -1023,7 +1034,8 @@ textarea {
     }
     img {
       width: 311px;
-      height: 67px;
+      max-width: 100%;
+      height: auto;
       margin: 0 auto 42px;
       display: block;
     }
@@ -1391,6 +1403,12 @@ textarea {
       }
     }
     .form-ask {
+      &.form-skew {
+          .form-area {
+            position: relative;
+            right: 24px;
+          }
+      }
       .form-submit {
         margin-top: 0;
         .button {
@@ -1432,6 +1450,11 @@ textarea {
     }
     .form-ask {
       padding-left: 105px;
+      &.form-skew {
+        .form-area {
+          right: 10px;
+        }
+      }
     }
   }
 }
@@ -1687,8 +1710,7 @@ textarea {
         .button {
           width: 45%;
           margin: 0 3px;
-          padding-top: 9px;
-          padding-bottom: 9px;
+          padding: 9px;
           font-size: 15px;
         }
       }
@@ -1972,10 +1994,22 @@ textarea {
   .buttons {
     text-align: center;
     .button {
-      width: 45%;
-      margin: 0 3px;
+      margin: 0 10px 10px;
       padding: 10px;
       font-size: 15px;
+      display: block;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @media @xxs {
+    .buttons {
+      .button {
+        width: 45%;
+        margin: 0 3px;
+        display: inline-block;
+      }
     }
   }
   @media @md {
@@ -2413,7 +2447,7 @@ textarea {
         &.form-skew {
           max-width: 340px;
           position: relative;
-          left: -40px;
+          left: -70px;
         }
         .form-line { margin-bottom: 18px; }
         textarea { height: 124px; }
@@ -2444,7 +2478,7 @@ textarea {
         .form {
           &.form-skew {
             max-width: 400px;
-            left: -60px;
+            left: -80px;
           }
           textarea { height: 150px; }
           .form-submit {
