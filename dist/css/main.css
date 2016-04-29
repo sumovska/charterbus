@@ -601,15 +601,18 @@ input[type="submit"].button-yellow:focus:before {
   top: 100%;
   z-index: -1;
 }
-.body-index .bg:after {
-  display: none;
-}
 @media (min-width: 768px) {
   .bg {
     height: 258px;
   }
   .bg:after {
     height: 26px;
+  }
+  .body-index .bg {
+    height: 876px;
+  }
+  .body-index .bg:before {
+    top: 224px;
   }
 }
 @media (min-width: 1280px) {
@@ -623,6 +626,23 @@ input[type="submit"].button-yellow:focus:before {
   }
   .bg:after {
     height: 30px;
+  }
+  .body-index .bg {
+    height: 716px;
+  }
+  .body-index .bg:before {
+    top: 165px;
+  }
+  .bg div {
+    height: 579px;
+    background: url('../img/roads/index.png') 76% 0 no-repeat;
+    background-size: auto 100%;
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 1;
   }
 }
 /* ==========================================================================
@@ -1671,29 +1691,8 @@ input[type="submit"].button-yellow:focus:before {
    _INDEX
    ========================================================================== */
 .index {
-  background-color: #eda73e;
-  background: -webkit-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
-  background: -moz-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
-  background: -ms-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
-  background: -o-linear-gradient(left, #eda73e, #f3c14d, #f0ad47);
-  background: linear-gradient(to right, #eda73e, #f3c14d, #f0ad47);
   position: relative;
-  z-index: 1;
-}
-.index:after {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  clear: both;
-  height: 20px;
-  background: url("../img/shadow.jpg") 50% 0 no-repeat;
-  background-size: auto 100%;
-  opacity: .98;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: -1;
+  z-index: 80;
 }
 .index .wrapper {
   padding-top: 34px;
@@ -1749,9 +1748,6 @@ input[type="submit"].button-yellow:focus:before {
   font-weight: 600;
 }
 @media (min-width: 768px) {
-  .index:after {
-    height: 26px;
-  }
   .index .wrapper {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -1809,22 +1805,6 @@ input[type="submit"].button-yellow:focus:before {
   }
 }
 @media (min-width: 1280px) {
-  .index:before {
-    display: block;
-    content: '\0020';
-    overflow: hidden;
-    background: url('../img/roads/index.png') 0 50% no-repeat;
-    background-size: 1874px 579px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    z-index: -1;
-  }
-  .index:after {
-    height: 30px;
-  }
   .index .wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
